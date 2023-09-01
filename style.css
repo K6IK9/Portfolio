@@ -13,12 +13,17 @@ img {
     border: 1px solid black;
     width: 100%;
     display: flex;
+
     justify-content: space-around;
     
+}
+.redes-soci ul {
+    list-style: none;
 }
 .redes-soci ul li{
     display: inline;
     margin-right: 40px;
+    
     
     
 }
@@ -51,4 +56,6 @@ main .perfil{
    flex-direction:column;
    align-items: center;
 }
-
+a {
+    text-decoration: none;
+}
