@@ -1,61 +1,70 @@
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #454545;
+}
 
-body{
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    overflow-x: hidden ;
-}
-img {
-    border-radius: 15px;
-    color: aliceblue;
-}
-.menu-principal {
-    border: 1px solid black;
-    width: 100%;
+.header {
     display: flex;
-
+    margin: 10px;
+    background: linear-gradient(to left, #42007f, #990000);
+    border-radius: 15px;
     justify-content: space-around;
-    
+    margin-bottom: 20px;
 }
+.nome {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    font-family:Georgia, 'Times New Roman', Times, serif ;    
+}
+
+.nome h1 {
+    padding-left: 20%;
+}
+
 .redes-soci ul {
     list-style: none;
 }
-.redes-soci ul li{
-    display: inline;
-    margin-right: 40px;
-    
-    
-    
-}
-.redes-soci{
-    width: 30%;
 
+.redes-soci ul li {
+    display: inline;
+    margin-right: 30px;
 }
-.nome {
-    width:60% ;
-    display: flex;
-    align-items: center;
+
+.redes-soci {
+    width: 30%;
 }
-.nome h1{
-    padding-left: 20%;
-}
-main {
-    background-color: bisque;
-    width: 70%;
-    height: 900px;
-    border: solid 1px black;
-    display: flex;
-    margin: 15px 0 0 250px;  
-    justify-content: center;
-}
-main .perfil{
-    display: flex;
-    background-color: #564b13;
-    width: 65%;
-    height: 70%;
-   flex-direction:column;
-   align-items: center;
+img {
+    border-radius: 30px;
 }
 a {
     text-decoration: none;
 }
+/*************** corpo **************************************************/
+
+.foto-perfil {
+    border-radius: 100px;
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+
+
+main {
+    background-color: bisque;
+    width: 70%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+main .perfil {
+
+    display: flex;
+    background-color: #564b13;
+    flex-direction: column;
+    align-items: center;
+}
+
