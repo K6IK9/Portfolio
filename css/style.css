@@ -18,20 +18,26 @@ main {
     margin: 10px;
     background: linear-gradient(to left, #42007f, #171b4738);
     border-radius: 15px;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-bottom: 20px;
     box-shadow: 5px 5px 10px #0000003c;
 }
 
 .nome {
-    width: 60%;
+    width: 100%;
     display: flex;
     align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.nome span {
+    color: black;
+}
+ 
 
 .nome h1 {
-    padding-left: 20%;
+    padding-left: 10%;
+
+    color: white;
 
 }
 
