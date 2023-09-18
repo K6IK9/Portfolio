@@ -12,7 +12,7 @@ main {
     width: 90%;
     margin: auto;
 }
-
+/*************** cabeçalho **************************************************/
 .header {
     display: flex;
     margin: 10px;
@@ -56,8 +56,8 @@ img {
 a {
     text-decoration: none;
 }
+/*************** navegação **************************************************/
 
-/*************** corpo **************************************************/
 nav {
 
     width: 100%;
@@ -68,18 +68,29 @@ nav {
     margin-top: 15px;
     margin-bottom: 15px;
 }
-
 nav a {
     padding: 10px;
-    background-color: #e8d0ff;
+    background: linear-gradient(to left, #42007f, #171b4738);
     border-radius: 25px;
-    color: black;
+    color: white;
     box-shadow: 5px 5px 10px #0000003c;
     padding-left: 15px;
     padding-right: 15px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
 }
+/************************** SEÇOES *************************************************************/
+.container {
+    color: white;
+    border-radius: 20px;
+    padding: 40px;
+    background: linear-gradient(to left, #42007f, #171b4738);
+    overflow: hidden;
+    box-shadow: 5px 5px 10px #0000003c;
+    margin-bottom: 30px;
+}
+
+/*************** corpo primeira seção - sobre mim **************************************************/
 
 .foto-perfil {
     border-radius: 30px;
@@ -88,16 +99,6 @@ nav a {
     height: auto;
     width: 30%;
 }
-
-.container {
-    border-radius: 20px;
-    padding: 40px;
-    background-color: #e8d0ff;
-    overflow: hidden;
-    box-shadow: 5px 5px 10px #0000003c;
-
-}
-
 .container h2 {
     margin-top: 0;
     font-size: 29px;
@@ -112,3 +113,4 @@ nav a {
     flex-wrap: wrap;
     margin-left: 10px;
 }
+/*************** corpo segunda seção - projetos **************************************************/
