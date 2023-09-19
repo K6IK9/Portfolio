@@ -5,7 +5,7 @@ body {
     margin: 0;
     background: linear-gradient(to left, #2e0053, #6a53cc);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    flex-direction: column;
+    
 }
 
 main {
@@ -41,16 +41,16 @@ main {
 
 }
 
-.redes-soci ul {
+.redes-social ul {
     list-style: none;
 }
 
-.redes-soci ul li {
+.redes-social ul li {
     display: inline;
     margin-right: 30px;
 }
 
-.redes-soci {
+.redes-social {
     width: 30%;
 }
 
@@ -65,7 +65,6 @@ a {
 /*************** navegação **************************************************/
 
 nav {
-
     width: 100%;
     flex-direction: row;
     margin: auto;
@@ -89,12 +88,11 @@ nav a {
 .container {
     color: white;
     border-radius: 20px;
-    padding: 40px;
-    background: linear-gradient(to left, #42007f, #171b4738);
-    overflow: hidden;
-    box-shadow: 5px 5px 10px #0000003c;
+    flex-direction: column;
     margin-bottom: 30px;
+    margin-top: 100px
 }
+
 
 /*************** corpo primeira seção - sobre mim **************************************************/
 
@@ -102,8 +100,19 @@ nav a {
     border-radius: 30px;
     float: right;
     margin-left: 90px;
+    padding: 10px;
+    width: 400px;
+    height: 295px;
+    background: linear-gradient(to left, #42007f, #171b4738);
+    box-shadow: 5px 5px 10px #0000003c;
+    
+}
+.foto-perfil img {
+    width:400px;
     height: auto;
-    width: 30%;
+    box-shadow: none;
+    position: absolute;
+    bottom: 74px;
 }
 .container h2 {
     margin-top: 0;
@@ -112,11 +121,16 @@ nav a {
     margin-left: 10px;
 }
 
-.container p {
+
+.text {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: justify;
     font-size: 18px;
-    flex-wrap: wrap;
+    width: 60%;
+    background: linear-gradient(to left, #51019c6d, #171b4738);
     margin-left: 10px;
+    padding: 20px;
+    height: 275px;
+    box-shadow: 5px 5px 10px #0000003c;
 }
 /*************** corpo segunda seção - projetos **************************************************/
