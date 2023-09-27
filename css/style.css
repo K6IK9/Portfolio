@@ -161,7 +161,6 @@ nav a {
     border-radius: 20px;
     margin-bottom: 20px;
     color: white;
-    min-width: 320px;
 }
 
 /*************** corpo segunda seção - projetos **************************************************/
@@ -202,7 +201,7 @@ nav a {
 
 
 
-/* Adicione consultas de mídia para responsividade */
+
 @media screen and (max-width: 768px) {
     .perfil {
         text-align: center;
@@ -214,9 +213,12 @@ nav a {
        
     }
 
-    .text {
+    .container-text {
         font-size: 16px;
         width: 100%;
     
+    }
+    .container-projetos ul li img {
+        width: 80px;
     }
 }
