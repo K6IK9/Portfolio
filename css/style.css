@@ -161,17 +161,22 @@ nav a {
     border-radius: 20px;
     margin-bottom: 20px;
     color: white;
+    min-width: 320px;
 }
 
 /*************** corpo segunda seção - projetos **************************************************/
 
 .container-projetos {
     display: flex;
+    
 }
 .container-projetos ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+   
     
 }
 .container-projetos ul li p {
@@ -179,12 +184,15 @@ nav a {
 }
 .container-projetos ul li {
     text-align: center;
+    margin: 20px;
+    display: block;
     
 }
 .container-projetos ul li img {
     display: block;
     width: 100px;
-    margin: 10px;
+    padding: 10px;
+    background: linear-gradient(to left, #51019c6d, #171b4738);
 }
 
 /*************** corpo terceira seção - none **************************************************/
@@ -198,17 +206,17 @@ nav a {
 @media screen and (max-width: 768px) {
     .perfil {
         text-align: center;
-        /* Centralize o conteúdo em telas menores */
+    
     }
 
     .foto-perfil {
         width: 100%;
-        /* Ajuste conforme necessário para telas menores */
+       
     }
 
     .text {
-        font-size: 1l6px;
+        font-size: 16px;
         width: 100%;
-        /* Ajuste o tamanho da fonte para telas menores */
+    
     }
 }

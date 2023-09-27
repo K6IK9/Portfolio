@@ -1,0 +1,158 @@
+.secao {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: tahoma;
+}
+
+.logo {
+    width: 150px;
+}
+
+img {
+    width: 1300px;
+}
+
+p {
+    width: 68%;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 28px;
+    margin: auto;
+}
+
+.links {
+    text-align: center;
+    margin: 10px auto 25px auto;
+}
+
+.links a {
+    color: #1d1d1d;
+    text-decoration: none;
+    border-bottom: 2px solid #1d1d1d;
+    font-family: tahoma;
+    margin-left: 10px;
+}
+
+span {
+    font-weight: bold;
+}
+
+.secao-1 {
+    background-color: #afddfb;
+}
+
+.secao-2 {
+    margin-top: 50px;
+    padding-top: 0;
+
+}
+
+.secao-3 h1 {
+    color: #1d1d1d;
+    margin-bottom: 5px;
+}
+
+.secao-3 h2 {
+    font-weight: normal;
+}
+
+.edit-img {
+    width: 450px;
+}
+
+h2 {
+    color: #1c81c0;
+    margin-top: 0;
+    font-size: 28px;
+    line-height: 42px;
+}
+
+.texto-azul {
+    color: #1d80c1;
+}
+
+.texto-amarelo {
+    color: #fff81b;
+}
+
+.secao-4 {
+    background-color: #1d80c1;
+}
+
+.secao-4 h2 {
+    color: #ffffff;
+    font-size: 28px;
+    line-height: 42px;
+}
+
+.secao-4 p {
+    color: #ffffff;
+    line-height: 42px;
+    font-size: 22px;
+    text-align: center;
+    width: 700px;
+}
+
+.secao-4 ul {
+
+    width: 135px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.secao-4 ul li {
+    color: #ffffff;
+    line-height: 42px;
+    text-align: left;
+    font-size: 22px;
+}
+
+.secao-6 {
+    background-color: #1d80c1;
+
+}
+
+.secao-6 h2 {
+    color: #ffffff;
+}
+
+.secao-6 p {
+    color: #ffffff;
+    background-color: #1d1d1d;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.secao-6 ul {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    width: 210px;
+
+}
+
+.secao-6 ul li {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 18px;
+    list-style: none;
+}
+
+.secao-6 ul li a {
+    background-color: #ffffff;
+    color: #1d80c1;
+    padding: 2px 5px 2px 5px;
+    border-radius: 5px;
+}
+
+.aviso {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
