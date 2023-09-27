@@ -3,7 +3,7 @@
 body {
     margin: 0;
     background: linear-gradient(to left, #2e0053, #6a53cc);
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: arial, sans-serif
 }
 
 main {
@@ -17,13 +17,13 @@ main {
 }
 
 /*************** cabeçalho **************************************************/
-.header {
+.container-header {
     display: flex;
     margin: 10px;
     background: linear-gradient(to left, #42007f, #171b4738);
     border-radius: 15px;
     justify-content: space-evenly;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
@@ -45,17 +45,17 @@ main {
 
 }
 
-.redes-social ul {
+.container-redes-social ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
 }
 
-.redes-social ul li {
+.container-redes-social ul li {
     margin-right: 30px;
 }
 
-.redes-social {
+.container-redes-social {
     width: 30%;
 }
 
@@ -76,8 +76,7 @@ nav {
     margin: auto;
     justify-content: space-between;
     display: flex;
-    margin-top: 15px;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 
 nav a {
@@ -92,11 +91,22 @@ nav a {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
 }
-
-/************************** SEÇOES *************************************************************/
+/************************** container and ber *************************************************************/
+.container-bar {
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background: linear-gradient(to left, #42007f, #171b4738);
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+.container-bar h2 {
+    margin: 0;
+}
 .container {
     border-radius: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: white;
 }
 
@@ -134,12 +144,12 @@ nav a {
     margin-left: 10px;
 }
 
-.text p {
+.container-text p {
     max-width: 100%;
     padding-bottom: 80px;
 }
 
-.text {
+.container-text {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: justify;
     font-size: 18px;
@@ -148,10 +158,39 @@ nav a {
     width: 60%;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     flex-direction: column;
-    
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color: white;
 }
 
 /*************** corpo segunda seção - projetos **************************************************/
+
+.container-projetos {
+    display: flex;
+}
+.container-projetos ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.container-projetos ul li p {
+    color: white;
+}
+.container-projetos ul li {
+    text-align: center;
+    
+}
+.container-projetos ul li img {
+    display: block;
+    width: 100px;
+    margin: 10px;
+}
+
+/*************** corpo terceira seção - none **************************************************/
+
+
+
 
 
 
@@ -168,7 +207,7 @@ nav a {
     }
 
     .text {
-        font-size: 16px;
+        font-size: 1l6px;
         width: 100%;
         /* Ajuste o tamanho da fonte para telas menores */
     }
