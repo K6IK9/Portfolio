@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
+html ::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+  html ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background:#6300b4;
+  }
+  html ::-webkit-scrollbar-track {
+    background: #f2efff;
+  }
+
 body {
     margin: 0;
     background: linear-gradient(to left, #2e0053, #6a53cc);
