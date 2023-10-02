@@ -1,0 +1,230 @@
+html {
+    font-family: 'Oswald', sans-serif;
+}
+
+main {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-top {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #604829;
+}
+
+.container-top a {
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: 500;
+    text-shadow: 4px 4px 3px black;
+    color: #c4a47c;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container-top img {
+    margin-right: 800px;
+    width: 65px;
+
+}
+
+/************************** main ***********************/
+
+.container-banner {
+    height: 100vh;
+}
+
+.container-banner h2 {
+    position: absolute;
+    letter-spacing: 2px;
+    font-weight: 200;
+    top: 400px;
+    right: 200px;
+    font-size: 80px;
+    color: white;
+    font-family: 'Fraunces', serif;
+}
+
+/************************** informações ***********************/
+
+.container-info {
+    padding: 70px 70px;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #666;
+    margin: auto;
+    width: 60%;
+}
+
+.container-info h2 {
+    color: #c4a47c;
+    margin-bottom: 25px;
+}
+
+/************************** parallax ***********************/
+
+.container-parallax1,
+.container-parallax2,
+.container-parallax3,
+.container-parallax4,
+.container-horarios {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container-parallax2 {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-parallax2 h3 {
+    background-color: #604829;
+    width: max-content;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 25px;
+}
+
+.container-parallax3 {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-parallax3 h3 {
+    background-color: #604829;
+    width: max-content;
+    padding: 10px 20px 10px 20px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 25px;
+}
+
+.container-parallax4 {
+    height: 690px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-parallax4 h2 {
+    background-color: #604829;
+    width: max-content;
+    padding: 10px 10px 10px 20px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.container-parallax4 iframe {
+    width: 820px;
+    height: 350px;
+    margin: 50px 0 50px 0;
+}
+
+.contato {
+    background-color: #604829;
+    color: white;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    font-size: 12px;
+}
+
+.contato p {
+    margin: 4px;
+}
+
+
+/************************** horario ***********************/
+
+.container-horarios {
+    height: 690px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-horarios h2 {
+    text-align: center;
+    margin-top: 130px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.lista {
+    width: 60%;
+    margin: auto;
+    list-style: none;
+}
+
+.lista li {
+    position: relative;
+}
+
+.lista li div {
+    width: 75%;
+    height: 1px;
+    position: absolute;
+    right: 14%;
+    background-color: #acacac;
+    bottom: 50%;
+}
+
+span {
+    color: #c4a47c;
+}
+
+.lista li p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #666;
+}
+
+.container-rodape {
+    position: relative;
+    color: white;
+    height: 100px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-rodape a {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 50px;
+    bottom: 80px;
+}
