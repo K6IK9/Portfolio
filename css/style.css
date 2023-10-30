@@ -2,15 +2,22 @@
 
 html ::-webkit-scrollbar {
     width: 10px;
-    
-  }
-  html ::-webkit-scrollbar-thumb {
+
+}
+
+html ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background:#6300b4;
-  }
-  html ::-webkit-scrollbar-track {
+    background: #6300b4;
+}
+
+html ::-webkit-scrollbar-track {
     background: #f2efff;
-  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     margin: 0;
@@ -30,19 +37,25 @@ main {
 
 /*************** cabeçalho **************************************************/
 .container-header {
-    display: flex;
-    margin: 10px;
     background: linear-gradient(to left, #42007f, #171b4738);
-    border-radius: 15px;
-    justify-content: space-evenly;
-    margin-bottom: 10px;
+    width: 100%;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin: 10px auto;
+    width: 98%;
+    border-radius: 15px;
+    padding: 20px 0;
+}
+
+.conteudo-header {
+    display: flex;
+    margin: 10px auto;
+    max-width: 1400px;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .nome {
-    width: 100%;
-    display: flex;
-    align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -50,9 +63,7 @@ main {
     color: black;
 }
 
-
 .nome h1 {
-    padding-left: 10%;
     color: white;
 
 }
@@ -67,14 +78,8 @@ main {
     margin-right: 30px;
 }
 
-.container-redes-social {
-    width: 30%;
-}
 
-img {
-    border-radius: 30px;
-    box-shadow: 7px 7px 5px #0000003c;
-}
+
 
 a {
     text-decoration: none;
@@ -103,6 +108,7 @@ nav a {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
 }
+
 /************************** container and ber *************************************************************/
 .container-bar {
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -113,9 +119,11 @@ nav a {
     margin-bottom: 20px;
     color: white;
 }
+
 .container-bar h2 {
     margin: 0;
 }
+
 .container {
     border-radius: 20px;
     margin-bottom: 20px;
@@ -179,26 +187,30 @@ nav a {
 
 .container-projetos {
     display: flex;
-    
+
 }
+
 .container-projetos ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
-   
-    
+
+
 }
+
 .container-projetos ul li p {
     color: white;
 }
+
 .container-projetos ul li {
     text-align: center;
     margin: 20px;
     display: block;
-    
+
 }
+
 .container-projetos ul li img {
     display: block;
     width: 100px;
@@ -217,19 +229,20 @@ nav a {
 @media screen and (max-width: 768px) {
     .perfil {
         text-align: center;
-    
+
     }
 
     .foto-perfil {
         width: 100%;
-       
+
     }
 
     .container-text {
         font-size: 16px;
         width: 100%;
-    
+
     }
+
     .container-projetos ul li img {
         width: 80px;
     }
