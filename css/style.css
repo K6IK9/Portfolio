@@ -9,7 +9,7 @@ html ::-webkit-scrollbar {
 
 html ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #6300b4;
+    background: var(--corfoco);
 }
 
 html ::-webkit-scrollbar-track {
@@ -21,6 +21,7 @@ html ::-webkit-scrollbar-track {
 
     --corbloco: #fff;
 
+    --corfoco: #E63946;
 }
 
 * {
@@ -69,7 +70,7 @@ main {
 }
 
 .nome span {
-    color: #E63946;
+    color:var(--corfoco);
 }
 
 .nome h1 {
@@ -94,12 +95,13 @@ a {
 
 .svg-ico {
     transition: 0.5s;
+
 }
 
 .svg-ico:hover {
 
     transform: scale(1.2);
-    fill: #E63946;
+    fill: var(--corfoco);
 }
 
 /*************** navegação **************************************************/
@@ -113,25 +115,21 @@ nav {
 }
 
 nav a {
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px 15px;
     border-radius: 25px;
     background-color: var(--corbloco);
-    color: #E63946;
+    color:var(--corfoco);
     font-weight: bold;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
-    transition: 0.5s;
-    overflow: hidden;
     border: 2px solid var(--corbloco);
 }
 
 nav a:hover {
     transform: scale(1.1);
-    background-color: #E63946;
+    background-color: var(--corfoco);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
     color: #000;
-    padding: 8px 15px;
 }
 
 
@@ -149,8 +147,8 @@ nav a:hover {
 }
 
 .container-bar h2 {
-    font-size: 27px;
-    color: #E63946;
+    font-size: 22px;
+    color:var(--corfoco);
     font-family: Arial, Helvetica, sans-serif
 }
 
@@ -165,7 +163,7 @@ nav a:hover {
 }
 
 .foto-perfil {
-    width: 27%;
+    width:auto;
     display: flex;
     border-radius: 30px;
     background-color: var(--corbloco);
@@ -174,7 +172,7 @@ nav a:hover {
 }
 
 .foto-perfil:hover {
-    background-color: #e6394794;
+    background-color: var(--corfoco);
     transform: scale(1.07);
 }
 
@@ -184,7 +182,7 @@ nav a:hover {
 }
 
 .container-text {
-    width: 60%;
+    width: 55%;
     text-align: justify;
     display: flex;
     align-items: center;
@@ -197,13 +195,16 @@ nav a:hover {
 }
 
 .container-text p::first-letter {
-    font-size: 26px;
-    font-family: Arial, Helvetica, sans-serif
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container-text p {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 30px;
+}
+.container-text p span {
+    color:var(--corfoco);
 }
 
 /*************** corpo segunda seção - projetos **************************************************/
@@ -219,7 +220,7 @@ nav a:hover {
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
-    
+    gap:20px
 
 }
 
@@ -232,7 +233,7 @@ nav a:hover {
     transition: 0.5s;
     padding: 10px;
     border-radius: 10px;
-    color: #E63946;
+    color:var(--corfoco);
     width: 180px;
     height: 160px;
     display: flex;
@@ -245,7 +246,7 @@ nav a:hover {
     transform: scale(1.1);
     padding: 10px;
     border-radius: 10px;
-    background-color: #E63946;
+    background-color: var(--corfoco);
     color: #fff;
     box-shadow: #71717171 0px 0px 25px;
     
