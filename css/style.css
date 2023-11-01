@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 html ::-webkit-scrollbar {
     width: 10px;
@@ -14,33 +16,40 @@ html ::-webkit-scrollbar-track {
     background: #f2efff;
 }
 
+:root {
+    --colorfundo: #F1FAEE;
+
+    --corbloco: #fff;
+
+}
+
 * {
     margin: 0;
     padding: 0;
+    letter-spacing: 1px;
 }
 
 body {
     margin: 0;
-    background: linear-gradient(to left, #2e0053, #6a53cc);
-    font-family: arial, sans-serif
+    background-color: var(--colorfundo)
 }
 
 main {
     margin: auto;
-    width: 90%;
-    max-width: 90%;
+    max-width: 71%;
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
     padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.5s;
 }
 
 /*************** cabeçalho **************************************************/
 .container-header {
-    background: linear-gradient(to left, #42007f, #171b4738);
+    background-color: var(--corbloco);
     width: 100%;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    margin: 10px auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px auto 0;
     width: 98%;
     border-radius: 15px;
     padding: 20px 0;
@@ -49,22 +58,22 @@ main {
 .conteudo-header {
     display: flex;
     margin: 10px auto;
-    max-width: 1400px;
+    max-width: 71%;
     justify-content: space-between;
     align-items: center;
 
 }
 
 .nome {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .nome span {
-    color: black;
+    color: #E63946;
 }
 
 .nome h1 {
-    color: white;
+    color: black;
 
 }
 
@@ -72,17 +81,25 @@ main {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between
 }
-
 .container-redes-social ul li {
-    margin-right: 30px;
+    margin: 0 10px;
 }
-
-
-
 
 a {
     text-decoration: none;
+    transition: 0.5s;
+}
+
+.svg-ico {
+    transition: 0.5s;
+}
+
+.svg-ico:hover {
+
+    transform: scale(1.2);
+    fill: #E63946;
 }
 
 /*************** navegação **************************************************/
@@ -90,97 +107,103 @@ a {
 nav {
     width: 100%;
     flex-direction: row;
-    margin: auto;
     justify-content: space-between;
     display: flex;
-    margin-bottom: 40px;
+    transition: 0.5s;
 }
 
 nav a {
-    padding: 10px;
     font-size: 20px;
-    background: linear-gradient(to left, #42007f, #171b4738);
+    padding: 10px 15px;
     border-radius: 25px;
-    color: white;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--corbloco);
+    color: #E63946;
     font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 10px;
+    transition: 0.5s;
+    overflow: hidden;
+    border: 2px solid var(--corbloco);
 }
 
+nav a:hover {
+    transform: scale(1.1);
+    background-color: #E63946;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    color: #000;
+    padding: 8px 15px;
+}
+
+
 /************************** container and ber *************************************************************/
+
 .container-bar {
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    background: linear-gradient(to left, #42007f, #171b4738);
+    background-color: var(--corbloco);
     padding: 20px;
     text-align: center;
     border-radius: 20px;
-    margin-bottom: 20px;
-    color: white;
+    margin: 20px 0;
+    color: #000;
+    box-shadow: #71717171 0px 0px 15px;
+    transition: 0.5s;
 }
 
 .container-bar h2 {
-    margin: 0;
-}
-
-.container {
-    border-radius: 20px;
-    margin-bottom: 20px;
-    color: white;
+    font-size: 27px;
+    color: #E63946;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 
 /*************** corpo primeira seção - sobre mim **************************************************/
-.perfil {
+.container-perfil {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap-reverse;
-    align-items: flex-end;
-
+    flex-wrap: wrap;
+    transition: 0.5s;
 }
 
 .foto-perfil {
+    width: 27%;
     display: flex;
-    width: 30%;
     border-radius: 30px;
-    margin: 0 0 20px 0;
-    background: linear-gradient(to left, #42007f, #171b4738);
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-
+    background-color: var(--corbloco);
+    box-shadow: #71717171 0px 0px 15px;
+    transition: 0.5s;
 }
+
+.foto-perfil:hover {
+    background-color: #e6394794;
+    transform: scale(1.07);
+}
+
 
 .foto-perfil img {
-    box-shadow: none;
     width: 100%;
-
-}
-
-.container h2 {
-    margin-top: 0;
-    font-size: 29px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-left: 10px;
-}
-
-.container-text p {
-    max-width: 100%;
-    padding-bottom: 80px;
 }
 
 .container-text {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: justify;
-    font-size: 18px;
-    background: linear-gradient(to left, #51019c6d, #171b4738);
-    padding: 30px;
     width: 60%;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    flex-direction: column;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    padding: 20px 70px;
     border-radius: 20px;
-    margin-bottom: 20px;
-    color: white;
+    color: #000;
+    font-weight: bold;
+    background-color: var(--corbloco);
+    box-shadow: #71717171 0px 0px 25px
+}
+
+.container-text p::first-letter {
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.container-text p {
+    font-size: 20px;
+    line-height: 30px;
 }
 
 /*************** corpo segunda seção - projetos **************************************************/
@@ -196,27 +219,48 @@ nav a {
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
-
+    
 
 }
 
 .container-projetos ul li p {
-    color: white;
+    font-weight: bold;
 }
 
-.container-projetos ul li {
-    text-align: center;
-    margin: 20px;
-    display: block;
+.container-projetos ul li    {
 
+    transition: 0.5s;
+    padding: 10px;
+    border-radius: 10px;
+    color: #E63946;
+    width: 180px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-projetos ul li:hover {
+    transform: scale(1.1);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #E63946;
+    color: #fff;
+    box-shadow: #71717171 0px 0px 25px;
+    
 }
 
 .container-projetos ul li img {
-    display: block;
     width: 100px;
-    padding: 10px;
-    background: linear-gradient(to left, #51019c6d, #171b4738);
+    border-radius: 10px;   
+    transition: 0.5s;
+    box-shadow: #71717171 0px 0px 25px;
+    background-color: #fff;
+    margin: 10px 0;
 }
+
+
 
 /*************** corpo terceira seção - none **************************************************/
 
