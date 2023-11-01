@@ -263,12 +263,67 @@ nav a:hover {
 
 
 
-/*************** corpo terceira seção - none **************************************************/
+/*************** footer **************************************************/
 
+.container-footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #fff;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 30px 0;
+}
 
+.nome-footer{
+    border-right: 1px solid #000;
 
+}
 
+.nome-footer h3 {
+    transition: 0.5s;
+    padding: 20px;
+}
 
+.nome-footer h3::first-letter {
+   font-size: 40px;
+   font-family: Arial, Helvetica, sans-serif;
+   color: var(--corfoco);
+}
+
+.nome-footer h3:hover {
+    color: var(--corfoco);
+}
+
+.contato-letter {
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.contato {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.contato p {
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.contato p:hover {
+    color: var(--corfoco);
+}
+
+.contato svg {
+    padding: 0 10px;
+    transition: 0.5s;
+}
+
+.contato svg:hover {
+    fill: var(--corfoco);
+}
+
+/*************** acesso em dispositivos menores **************************************************/
 
 
 @media screen and (max-width: 768px) {
