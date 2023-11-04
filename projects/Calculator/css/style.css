@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #999999;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 40px;
+    padding: 10px;
+}
+
+.container-calc {
+    width: 500px;
+    height: 530px;
+}
+
+.container-visor {
+    border: 1px solid #ffffff;
+    margin: 10px 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.container-visor p{
+    margin: 5px;
+    font-size: 30px;
+    color: #000;
+}
+
+
+
+
+.container-apagador {
+    display: flex;
+    justify-content: end;
+    border: 1px solid #ffffff;
+    margin: 10px 0;
+    background-color: #ffffff;
+    color: #000;
+}
+
+.tabela-calc {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-spacing: 20px;
+}   
+
+tbody tr {
+    text-align: center;
+}
+
+tbody tr td{
+    border-radius: 40px;
+    background-color: #898989;
+    transition: 0.5s;
+    width: 30px;
+}
+
+tbody tr td:hover {
+    color: #000;
+    transform: scale(1.1);
+    background-color: rgb(255, 0, 0);
+}
+
+tbody tr td:active {
+    background-color: #898989;
+    transition: 0s;
+}
+
+
+
+@media screen and (max-width: 1014px) {
+
+
+    .container-calc {
+        width: 300px;
+        height: 350px;
+    }
+
+    tbody tr td:hover {
+        border-radius: 40px;
+    background-color: #898989;
+    
+    width: 30px;
+    transform: scale(1);
+    color: #fff;
+    }
+
+    tbody tr td:active {
+       background-color: #ff0000;
+        transition: 0s;
+    }
+
+}
