@@ -371,11 +371,16 @@ nav a:hover {
 
 
     main {
-        width: 100%;
+        max-width: 97%;
+        padding: 10px 0 0 0;
     }
 
 
     /** header**/
+
+    .conteudo-header {
+        max-width: 90%;
+    }
 
     .nome h1 {
         font-size: 100%;
@@ -395,22 +400,47 @@ nav a:hover {
         flex-wrap: wrap;
         align-items: center;
         transition: 0.5s;
-
+        width: 100%;
 
     }
 
 
     .foto-perfil {
-        width: 70%;
+       min-width: 260px;
         margin-bottom: 20px;
         display: flex;
     }
 
+    
+
     .container-text {
-      width: auto%;
+        width: auto;
 
 
     }
+
+
+
+    /** projetos **/
+
+    .container-projetos ul {
+        justify-content: space-around;
+        gap: 10px;
+    }
+
+    .container-projetos ul li {
+        transition: 0.5s;
+        padding: 10px;
+        border-radius: 10px;
+        color: var(--corfoco);
+        width: 150px;
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
 
     .container-projetos ul li img {
         width: 80px;
