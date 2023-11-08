@@ -19,8 +19,9 @@ header h1 {
 }
 
 .container-calc {
-    width: 500px;
-    height: 530px;
+   width: 500px;
+    height: 500px;
+   
 }
 
 .container-visor {
@@ -32,6 +33,7 @@ header h1 {
     flex-direction: row-reverse;
     align-items: center;
     background-color: #ffffff;
+    overflow: hidden;
 }
 
 .container-visor p{

@@ -1,89 +1,172 @@
-var cadeianumerico = [];
+var primeiroconj = [];
+var segundoconj = [];
+var visualizacao = [];
+var sinal;
 
-var resutadovisual;
 var resu_visu = document.getElementById("resu_visu");
 var resu;
-
-function imprimir() {
-    resu = cadeianumerico.join("");
-    resutadovisual = resu
-    console.log(resu);
-    resu_visu = resutadovisual;
-}
- resu = cadeianumerico.join("");
-console.log(resu);
+var pontocontrol;
 
 
 function imprimir() {
-    var resu = cadeianumerico.join("");
-    resutadovisual = resu; // Atualize resutadovisual
-    resu_visu.innerHTML = resutadovisual; // Atualize a exibição na página
+
+    resu_visu.innerHTML = visualizacao;
     console.log(resu);
 }
 
 
 
+/* AINDA NÃO ULTILIZAVEL
+function porcent() {
+    pontocontrol = 1;
 
-var resultado1 = parseInt(cadeianumerico[0]) + parseInt(cadeianumerico[1]);
-var resultado2 = parseInt(segundacadeia[0]) + parseInt(segundacadeia[1]);
+    var visualizacao = primeiroconj.join("");
+    resu_visu.innerHTML = visualizacao + " %";
 
 
-var res
-console.log(resultado1);
-console.log(resultado2);
+}
+*/
 
-var resultado3 = resultado1 + resultado2;
+function confirma() {
+    console.log(primeiroconj);
+    console.log(segundoconj);
+}
 
-console.log(resultado3);
+var pontodivisao;
+function divisao() {
+    pontocontrol = 1;
+    pontodivisao = 1;
+    sinal = " / "
+    visualizacao = primeiroconj.join("") + primeiroconj.push(" / ");
+    resu_visu.innerHTML = visualizacao ;
+}
 
 
 
 
 function num0() {
-    cadeianumerico.push("0");
-    imprimir();
+
+    if (pontocontrol === 1) {
+        segundoconj.push("0");
+        visualizacao = segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("0");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
+    
+
 }
 function num1() {
-    cadeianumerico.push("1");
-    imprimir();
+    if (pontocontrol === 1) {
+        segundoconj.push("1");
+        visualizacao =   segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("1");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
 
 }
 function num2() {
-    cadeianumerico.push("2");
-    imprimir();
+    if (pontocontrol === 1) {
+        segundoconj.push("2");
+        visualizacao =   segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("2");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
 }
 function num3() {
-    cadeianumerico.push("3");
-    imprimir();
+    if (pontocontrol === 1) {
+        segundoconj.push("3");
+        visualizacao =   segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("3");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
 }
 function num4() {
-    cadeianumerico.push("4");
-    imprimir();
+    if (pontocontrol === 1) {
+        segundoconj.push("4");
+        visualizacao =   segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("4");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
 }
 function num5() {
-    cadeianumerico.push("5");
-    imprimir();
+    if (pontocontrol === 1) {
+        segundoconj.push("5");
+        visualizacao =  segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("5");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
 }
 function num6() {
-    cadeianumerico.push("6");
-    imprimir();
+    if (pontocontrol === 1) {
+        segundoconj.push("6");
+        visualizacao =   segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("6");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
 }
 function num7() {
-    cadeianumerico.push("7");
-    imprimir();
+    if (pontocontrol === 1) {
+        segundoconj.push("7");
+        visualizacao =   segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("7");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
 }
 function num8() {
-    cadeianumerico.push("8");
-    imprimir();
+    if (pontocontrol === 1) {
+        segundoconj.push("8");
+        visualizacao =   segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("8");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
 }
+
 function num9() {
-    cadeianumerico.push("9");
-    imprimir();
+    if (pontocontrol === 1) {
+        segundoconj.push("9");
+        visualizacao =   segundoconj.join("");
+        imprimir();
+    } else {
+        primeiroconj.push("9");
+        visualizacao = primeiroconj.join("");
+        imprimir();
+    }
 }
 
 function reset() {
-    cadeianumerico = [];
-    imprimir();
+    primeiroconj = [];
+    segundoconj = [];
+    pontocontrol = 0;
+
+    var resu = primeiroconj.join("");
+    resu_visu.innerHTML =  "0";
 
 }
 
