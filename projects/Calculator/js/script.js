@@ -6,7 +6,7 @@ var resutado;
 
 var resu_visu = document.getElementById("resu_visu");
 
-var pontocontrol;
+var pontocontrol = 0;
 
 
 function imprimir() {
@@ -27,32 +27,61 @@ function porcent() {
 }
 */
 
+
+function desfazer() {
+    
+    if (pontocontrol === 1) {
+        segundoconj = segundoconj.slice(0);
+        console.log("Segundo conjunto foi apagado ultimo caractere ");
+        console.log(pontocontrol);
+        console.log(segundoconj);
+    } else {
+        if (sinal === "") {
+            sinal = [];
+            console.log("Sinal apagado");
+            console.log(pontocontrol);
+            console.log(sinal);
+        }else {
+            primeiroconj = primeiroconj.slice(0);
+            console.log(pontocontrol);
+            console.log("Primeiro conjunto foi apagado ultimo caractere ");
+            console.log(primeiroconj);
+        }
+        
+    }
+   imprimir();
+}
+
+
+
+
+
 function confirma() {
     switch (equacao) {
         case 1:
-            resutado = parseFloat(primeiroconj.join()) / parseFloat(segundoconj.join());
+            resutado = parseFloat(primeiroconj.join("")) / parseFloat(segundoconj.join(""));
 
             visualizacao = resutado;
             imprimir();
             break;
 
         case 2:
-            resutado = parseFloat(primeiroconj.join()) * parseFloat(segundoconj.join());
+            resutado = parseFloat(primeiroconj.join("")) * parseFloat(segundoconj.join(""));
 
             visualizacao = resutado;
             imprimir();
             break;
 
         case 3:
-            resutado = parseFloat(primeiroconj.join()) - parseFloat(segundoconj.join());
+            resutado = parseFloat(primeiroconj.join("")) - parseFloat(segundoconj.join(""));
 
             visualizacao = resutado;
             imprimir();
             break;
 
         case 4:
-            resutado = parseFloat(primeiroconj.join()) + parseFloat(segundoconj.join());
-            
+            resutado = parseFloat(primeiroconj.join("")) + parseFloat(segundoconj.join(""));
+
             visualizacao = resutado;
             imprimir();
             break;
@@ -64,7 +93,7 @@ function divisao() {
     if (pontocontrol === 0) {
         pontocontrol = 1;
         equacao = 1;
-        sinal = " / "
+        sinal = " / ";
         visualizacao = primeiroconj.join("") + sinal;
         resu_visu.innerHTML = visualizacao;
     } else {

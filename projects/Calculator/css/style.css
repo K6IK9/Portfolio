@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
 * {
     padding: 0;
     margin: 0;
@@ -9,8 +12,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #999999;
+    background-color: rgb(45, 2, 162);
     color: #fff;
+    font-family: 'Poppins', sans-serif;
 }
 
 header h1 {
@@ -19,16 +23,18 @@ header h1 {
 }
 
 .container-calc {
-   width: 500px;
-    height: 500px;
-   
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid #000;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .container-visor {
-    border: 1px solid #ffffff;
-    margin: 10px 0;
+
+
     width: 100%;
-    height: 70px;
+    height: 80px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -36,7 +42,7 @@ header h1 {
     overflow: hidden;
 }
 
-.container-visor p{
+.container-visor p {
     margin: 5px;
     font-size: 30px;
     color: #000;
@@ -56,29 +62,33 @@ header h1 {
 
 .tabela-calc {
     background-color: #ffffff;
-    width: 100%;
-    height: 100%;
-    border-spacing: 20px;
-}   
-
-tbody tr {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-top: 1px solid #dfdfdf ;
+    padding: 12px 0 0 0;
 }
 
-tbody tr td{
+.col button {
     border-radius: 40px;
-    background-color: #898989;
+    border: none;
+    background-color:#dfdfdf ;
     transition: 0.5s;
-    width: 30px;
+    width: 80px;
+    height: 80px;
+    margin: 4px;
+    color:  rgb(45, 2, 162);
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
 }
 
-tbody tr td:hover {
-    color: #000;
+.col button:hover {
+    color: #ffffff;
     transform: scale(1.1);
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(45, 2, 162);
 }
 
-tbody tr td:active {
+.col button:active {
     background-color: #898989;
     transition: 0s;
 }
@@ -89,21 +99,20 @@ tbody tr td:active {
 
 
     .container-calc {
-        width: 300px;
-        height: 350px;
+        
     }
 
-    tbody tr td:hover {
+    .col button:hover {
         border-radius: 40px;
-    background-color: #898989;
-    
-    width: 30px;
-    transform: scale(1);
-    color: #fff;
+        background-color: #898989;
+
+        width: 30px;
+        transform: scale(1);
+        color: #fff;
     }
 
-    tbody tr td:active {
-       background-color: #ff0000;
+    .col button:active {
+        background-color: #ff0000;
         transition: 0s;
     }
 

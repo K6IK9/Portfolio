@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -27,50 +27,48 @@
         </div>
 
         <div class="container-apagador">
-            <p>PROJETO AINDA EM ANDAMENTO</p>
+            <button onclick="desfazer()">APAGAR</button>
         </div>
 
 
-            <table class="tabela-calc">
-                <tr class="col-1">
-                    <td onclick="reset()">C</td>
-                    <th></th>
-                    <th></th>
+            <div class="tabela-calc">
+                <div class="col col-1">
+                    <button onclick="reset()">C</button>
+  
+                </div>  
+
+                <div class="col col-2">
+                    <button onclick="num7()">7</button>
+                    <button onclick="num8()">8</button>
+                    <button onclick="num9()">9</button>
+                    <button onclick="divisao()">/</button>
+                </div>
+
+                <div class="col col-3">
+                    <button onclick="num4()">4</button>
+                    <button onclick="num5()">5</button>
+                    <button onclick="num6()">6</button>
+                    <button onclick="multiplicacao()">X</button>
+
+                </div>
+
+                <div class="col col-4">
+                    <button onclick="num1()">1</button>
+                    <button onclick="num2()">2</button>
+                    <button onclick="num3()">3</button>
+                    <button onclick="subacao()">-</button>
+                </div>
+
+                <div class="col col-5">
+                    <button onclick="num0()">0</button>
                     
-                </tr>
-
-                <tr class="col-2">
-                    <td onclick="num7()">7</td>
-                    <td onclick="num8()">8</td>
-                    <td onclick="num9()">9</td>
-                    <td onclick="divisao()">/</td>
-                </tr>
-
-                <tr class="col-3">
-                    <td onclick="num4()">4</td>
-                    <td onclick="num5()">5</td>
-                    <td onclick="num6()">6</td>
-                    <td onclick="multiplicacao()">X</td>
-
-                </tr>
-
-                <tr class="col-4">
-                    <td onclick="num1()">1</td>
-                    <td onclick="num2()">2</td>
-                    <td onclick="num3()">3</td>
-                    <td onclick="subtracao()">-</td>
-                </tr>
-
-                <tr class="col-5">
-                    <td onclick="num0()">0</td>
-                    
-                    <td onclick="ponto()">.</td>
-                    <td onclick="confirma()">=</td>
-                    <td onclick="adicao()">+</td>
-                </tr>
+                    <button onclick="ponto()">.</button>
+                    <button onclick="confirma()">=</button>
+                    <button onclick="adicao()">+</button>
+                </div>
 
 
-            </table>
+            </div>
 
 
        
