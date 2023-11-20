@@ -23,6 +23,8 @@ header h1 {
 }
 
 .container-calc {
+    width: 365px;
+    height: 582px;
     border-radius: 5px;
     padding: 10px;
     border: 2px solid #000;
@@ -119,6 +121,7 @@ header h1 {
     .col button:active {
         background-color: #2d02a2;
         transition: 0s;
+        color: #fff;
     }
 
 }
