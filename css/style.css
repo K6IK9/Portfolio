@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 html ::-webkit-scrollbar {
     width: 10px;
@@ -64,7 +63,7 @@ main {
 }
 
 .nome {
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .nome span {
@@ -80,7 +79,7 @@ main {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .container-redes-social ul li {
@@ -147,7 +146,7 @@ nav a:hover {
 .container-bar h2 {
     font-size: 22px;
     color: var(--corfoco);
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*************** corpo primeira seção - sobre mim **************************************************/
@@ -240,8 +239,6 @@ nav a:hover {
 
 .container-projetos ul li:hover {
     transform: scale(1.1);
-    padding: 10px;
-    border-radius: 10px;
     background-color: var(--corfoco);
     color: #fff;
     box-shadow: #71717171 0px 0px 25px;
@@ -324,6 +321,57 @@ nav a:hover {
 
 @media screen and (max-width: 1404px) {
 
+    .svg-ico:hover {
+        transform: none;
+        fill: #000;
+    }
+
+    .svg-ico:active {
+        fill: var(--corfoco);
+    }
+
+    nav a:hover {
+        transform: none;
+        background-color: var(--corbloco);
+        box-shadow: none;
+        color: var(--corfoco);
+    }
+
+    nav a:active {
+        transform: none;
+        background-color: var(--corfoco);
+        color: #000;
+    }
+
+    .foto-perfil:hover {
+        background-color: var(--corbloco);
+        transform: none;
+    }
+
+    .foto-perfil:active {
+        background-color: var(--corfoco);
+    }
+
+    .container-projetos ul li:hover {
+        transform: none;
+        background-color: var(--corbloco);
+        color: var(--corfoco);
+        box-shadow: none;
+
+    }
+
+    .container-projetos ul li:active {
+        transform: none;
+        background-color: var(--corfoco);
+        color: #fff;
+    }
+
+    .container-projetos ul li {
+        width: 160px;
+        height: 140px;
+    }
+
+
     main {
         max-width: 80%;
     }
@@ -353,6 +401,9 @@ nav a:hover {
 }
 
 @media screen and (max-width: 1014px) {
+
+
+    
 
     main {
         max-width: 97%;
@@ -387,7 +438,7 @@ nav a:hover {
     }
 
     .foto-perfil {
-       min-width: 260px;
+        min-width: 260px;
         margin-bottom: 20px;
         display: flex;
     }
