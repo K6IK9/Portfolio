@@ -109,15 +109,15 @@ header h1 {
 
     .col button:hover {
         border-radius: 40px;
-        background-color: #898989;
+        background-color: #dfdfdf ;
 
-       
+       color: #2d02a2;
         transform: none;
-        color: #fff;
+        
     }
 
     .col button:active {
-        background-color: #ff0000;
+        background-color: #2d02a2;
         transition: 0s;
     }
 
