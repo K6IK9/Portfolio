@@ -10,7 +10,7 @@ var pontocontrol = 0;
 
 
 function imprimir() {
-
+    visualizacao = primeiroconj.join("") + sinal + segundoconj.join("");
     resu_visu.innerHTML = visualizacao;
 }
 
@@ -29,27 +29,24 @@ function porcent() {
 
 
 function desfazer() {
-    
-    if (pontocontrol === 1) {
-        segundoconj = segundoconj.slice(0);
-        console.log("Segundo conjunto foi apagado ultimo caractere ");
-        console.log(pontocontrol);
-        console.log(segundoconj);
-    } else {
-        if (sinal === "") {
+    if(pontocontrol === 1){
+        if(segundoconj.length === 0){
             sinal = [];
-            console.log("Sinal apagado");
-            console.log(pontocontrol);
-            console.log(sinal);
+            pontocontrol = 0;
+            console.log("Apagando sinal")
+            imprimir();
         }else {
-            primeiroconj = primeiroconj.slice(0);
-            console.log(pontocontrol);
-            console.log("Primeiro conjunto foi apagado ultimo caractere ");
-            console.log(primeiroconj);
+            segundoconj.pop()
+            console.log("Removido ultimo caractere do segundo conjunto" + segundoconj);
+            imprimir();
         }
-        
+    }else{
+        primeiroconj.pop()
+        console.log("Removido ultimo caractere do primeiro conjunto" + primeiroconj);
+            imprimir();
     }
-   imprimir();
+
+
 }
 
 
@@ -62,28 +59,28 @@ function confirma() {
             resutado = parseFloat(primeiroconj.join("")) / parseFloat(segundoconj.join(""));
 
             visualizacao = resutado;
-            imprimir();
+            resu_visu.innerHTML = visualizacao;
             break;
 
         case 2:
             resutado = parseFloat(primeiroconj.join("")) * parseFloat(segundoconj.join(""));
 
             visualizacao = resutado;
-            imprimir();
+            resu_visu.innerHTML = visualizacao;
             break;
 
         case 3:
             resutado = parseFloat(primeiroconj.join("")) - parseFloat(segundoconj.join(""));
 
             visualizacao = resutado;
-            imprimir();
+            resu_visu.innerHTML = visualizacao;
             break;
 
         case 4:
             resutado = parseFloat(primeiroconj.join("")) + parseFloat(segundoconj.join(""));
 
             visualizacao = resutado;
-            imprimir();
+            resu_visu.innerHTML = visualizacao;
             break;
     }
 }
