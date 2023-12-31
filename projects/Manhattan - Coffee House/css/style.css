@@ -228,3 +228,10 @@ span {
     right: 50px;
     bottom: 80px;
 }
+
+
+.aviso {
+    background-color: red;
+    color: white;
+    text-align: center;
+}

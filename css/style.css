@@ -15,6 +15,10 @@ html ::-webkit-scrollbar-track {
     background: #f2efff;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --colorfundo: #F1FAEE;
 
@@ -221,16 +225,16 @@ nav a:hover {
 
 .container-projetos ul li p {
     font-weight: bold;
+    font-size: 0.9em;
 }
 
 .container-projetos ul li {
-
     transition: 0.5s;
     padding: 10px;
     border-radius: 10px;
     color: var(--corfoco);
-    width: 180px;
-    height: 160px;
+    width: 160px;
+    height: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -246,8 +250,8 @@ nav a:hover {
 }
 
 .container-projetos ul li img {
-    width: 100px;
-    border-radius: 10px;
+    width: 80px;
+    border-radius: 15px;
     transition: 0.5s;
     box-shadow: #71717171 0px 0px 25px;
     background-color: #fff;
