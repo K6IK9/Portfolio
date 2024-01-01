@@ -38,6 +38,10 @@ body {
     background-color: var(--colorfundo)
 }
 
+.coloraf {
+   
+}
+
 main {
     margin: auto;
     max-width: 73%;
@@ -510,8 +514,8 @@ nav a:hover {
     /***** BOTÃO NOTURNO ****/
 
     .button_not {
-        right: 5vw;
-        bottom: 3vw;
+        right: 8vw;
+        bottom: 6vw;
     }
 
     .button_not:hover {
@@ -531,13 +535,13 @@ nav a:hover {
 
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 320px) {
 
 
      /***** BOTÃO NOTURNO ****/
 
     .button_not {
-        right: 5vw;
+        right: 6vw;
         bottom: 10vw;
     }
 
