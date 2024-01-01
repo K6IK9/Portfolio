@@ -407,7 +407,7 @@ nav a:hover {
 @media screen and (max-width: 1014px) {
 
 
-    
+
 
     main {
         max-width: 97%;
@@ -476,4 +476,19 @@ nav a:hover {
     .container-projetos ul li img {
         width: 80px;
     }
+}
+
+@media screen and (max-width: 385px) {
+
+
+    /*************** navegação *******************/
+
+
+    nav a {
+        font-size: 13px;
+        padding: 10px 15px;
+
+
+    }
+
 }
