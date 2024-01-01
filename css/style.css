@@ -46,6 +46,26 @@ main {
     padding: 20px;
     font-family: 'Poppins', sans-serif;
     transition: 0.5s;
+
+}
+
+
+.button_not {
+    position: fixed;
+    bottom: 2vw;
+    right: 14vw;
+    border-radius: 25%;
+    z-index: 2;
+    transition: 0.5s;
+    border: 2px solid #000;
+    background-color: #ffffff;
+    box-shadow: #0000003d -2px 5px 10px, #0000003d 2px 5px 10px;
+}
+
+.button_not:hover {
+    fill: #ffffff;
+    background-color: #000;
+    border: 2px solid;
 }
 
 /*************** cabeçalho **************************************************/
@@ -402,6 +422,15 @@ nav a:hover {
     .container-header {
         padding: 5px 0;
     }
+
+    /***** BOTÃO NOTURNO ****/
+
+    .button_not {
+        right: 10vw;
+    }
+
+
+
 }
 
 @media screen and (max-width: 1014px) {
@@ -476,6 +505,47 @@ nav a:hover {
     .container-projetos ul li img {
         width: 80px;
     }
+
+
+    /***** BOTÃO NOTURNO ****/
+
+    .button_not {
+        right: 5vw;
+        bottom: 3vw;
+    }
+
+    .button_not:hover {
+        fill: #000000;
+        border: 2px solid #000;
+        background-color: #ffffff;
+    }
+
+    .button_not:active {
+        fill: #ffffff;
+        background-color: #000;
+        border: 2px solid;
+    }
+
+
+
+
+}
+
+@media screen and (max-width: 540px) {
+
+
+     /***** BOTÃO NOTURNO ****/
+
+    .button_not {
+        right: 5vw;
+        bottom: 10vw;
+    }
+
+    .button_not svg {
+        width: 30px;
+        height: 30px;
+    }
+
 }
 
 @media screen and (max-width: 385px) {
