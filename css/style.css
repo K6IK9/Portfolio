@@ -38,9 +38,33 @@ body {
     background-color: var(--colorfundo)
 }
 
-.coloraf {
-   
+/*** MODO NOTURNO *********/
+
+.backbody {
+    background-color: #3a394b;
 }
+
+.buttonnotu {
+    background-color: #E63946;
+}
+
+
+.modo_noturno {
+    display: inline;
+    background-color: #E63946;
+    color: white;
+    position: fixed;
+    bottom: 10vw;
+    padding: 10px;
+
+}
+
+
+
+.tempnoturno {
+    display: none;
+}
+
 
 main {
     margin: auto;
@@ -538,7 +562,7 @@ nav a:hover {
 @media screen and (max-width: 320px) {
 
 
-     /***** BOTÃO NOTURNO ****/
+    /***** BOTÃO NOTURNO ****/
 
     .button_not {
         right: 6vw;
