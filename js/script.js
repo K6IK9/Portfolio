@@ -1,14 +1,11 @@
 function noturno() {
-    var body = document.querySelector("body");
-    body.classList.toggle("backbody");
+    var linkstyle = document.getElementById("linkstyle");
 
-    var button_noturno = document.getElementById("noturnostyle");
+    var hrefstyle = linkstyle.getAttribute("href");
 
-    button_noturno.classList.toggle("buttonnotu");
-
-
-    var tempnotu = document.getElementById("section_temp");
-
-    tempnotu.classList.toggle("tempnoturno");
-    tempnotu.classList.toggle("modo_noturno");
+    if(hrefstyle === "css/style.css"){
+        linkstyle.setAttribute("href", "css/style_Escuro.css");
+    }else{
+        linkstyle.setAttribute("href", "css/style.css");
+    }
 }
