@@ -41,38 +41,17 @@ main {
 
 }
 
-
- :root {
+:root {
     --colorfundo: #F1FAEE;
 
     --corbloco: #fff;
 
     --corfoco: #E63946;
 
-     --cortexto: #000000;
+    --cortexto: #000000;
 
-     --sombranativa:  #00000059 0px 5px 15px;
- }
-
-
-
-/*** MODO NOTURNO barra de aviso*********/
-.modo_noturno {
-    display: inline;
-    background-color: #E63946;
-    color: white;
-    position: fixed;
-    bottom: 10vw;
-    padding: 10px;
-
+    --sombranativa: #00000059 0px 5px 15px;
 }
-
-.tempnoturno {
-    display: none;
-}
-
-
-
 
 /*************** Botão escuro **************************************************/
 
@@ -80,19 +59,13 @@ main {
     position: fixed;
     bottom: 2vw;
     right: 14vw;
-    border-radius:30%;
+    border-radius: 30%;
     z-index: 2;
     transition: 0.5s;
-    fill:#312a2a; 
+    fill: #312a2a;
     border: 2px solid #a7a7a7;
     background-color: #ffffff;
     box-shadow: #0000003d -2px 5px 10px, #0000003d 2px 5px 10px;
-}
-
-.button_not:hover {
-    fill: var(--colorfundo);
-    background-color: var(--corfoco);
-    border: 2px solid;
 }
 
 /*************** cabeçalho **************************************************/
@@ -123,7 +96,7 @@ main {
 }
 
 .nome h1 {
-    color:var(--cortexto);
+    color: var(--cortexto);
 
 }
 
@@ -149,12 +122,6 @@ a {
 
 }
 
-.svg-ico:hover {
-
-    transform: scale(1.2);
-    fill: var(--corfoco);
-}
-
 /*************** navegação **************************************************/
 
 nav {
@@ -176,13 +143,6 @@ nav a {
     border: 2px solid var(--corbloco);
 }
 
-nav a:hover {
-    transform: scale(1.1);
-    background-color: var(--corfoco);
-    box-shadow: var(--sombranativa);
-    color: #fff;
-}
-
 /************************** container and ber *************************************************************/
 
 .container-bar {
@@ -191,7 +151,7 @@ nav a:hover {
     text-align: center;
     border-radius: 20px;
     margin: 20px 0;
-    box-shadow:var(--sombranativa);
+    box-shadow: var(--sombranativa);
     transition: 0.5s;
 }
 
@@ -215,13 +175,8 @@ nav a:hover {
     display: flex;
     border-radius: 30px;
     background-color: var(--corbloco);
-    box-shadow:var(--sombranativa);
+    box-shadow: var(--sombranativa);
     transition: 0.5s;
-}
-
-.foto-perfil:hover {
-    background-color: var(--corfoco);
-    transform: scale(1.07);
 }
 
 .foto-perfil img {
@@ -237,7 +192,7 @@ nav a:hover {
     color: var(--cortexto);
     font-weight: bold;
     background-color: var(--corbloco);
-    box-shadow:var(--sombranativa);
+    box-shadow: var(--sombranativa);
     transition: 0.5s;
 }
 
@@ -255,7 +210,7 @@ nav a:hover {
     color: var(--corfoco);
 }
 
-/*************** corpo segunda seção - projetos **************************************************/
+/*************** corpo segunda seção - projetos *********************/
 
 .container-projetos {
     display: flex;
@@ -288,26 +243,17 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-}
-
-.container-projetos ul li:hover {
-    transform: scale(1.1);
-    background-color: var(--corfoco);
-    color: var(--cortexto);
-    box-shadow:var(--sombranativa);
-
+    box-shadow: var(--sombranativa);
 }
 
 .container-projetos ul li img {
     width: 80px;
     border-radius: 15px;
     transition: 0.5s;
-    box-shadow:var(--sombranativa);
+    
     background-color: #fff;
     margin: 10px 0;
 }
-
 
 /*************** footer **************************************************/
 
@@ -315,7 +261,7 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color:var(--corbloco);
+    background-color: var(--corbloco);
     justify-content: center;
     margin-top: 60px;
     padding: 30px 0;
@@ -339,10 +285,6 @@ nav a:hover {
     color: var(--corfoco);
 }
 
-.nome-footer h3:hover {
-    color: var(--corfoco);
-}
-
 .contato-letter {
     padding: 0 10px;
     margin-bottom: 20px;
@@ -361,78 +303,149 @@ nav a:hover {
     color: var(--cortexto);
 }
 
-.contato p:hover {
-    color: var(--corfoco);
-}
-
 .contato svg {
     padding: 0 10px;
     transition: 0.5s;
     fill: var(--corfoco);
 }
 
-.contato svg:hover {
-    fill: var(--corfoco);
+/************ ativação de efeitos acima de  1028px **************/
+
+@media screen and (min-width: 1028px) {
+
+    /************* Botão escuro *********************/
+
+    .button_not:hover {
+        fill: var(--colorfundo);
+        background-color: var(--corfoco);
+        border: 2px solid;
+    }
+
+    /************* cabeçalho ************/
+
+    .svg-ico:hover {
+
+        transform: scale(1.2);
+        fill: var(--corfoco);
+    }
+
+    /*************** navegação ***********************/
+
+    nav a:hover {
+        transform: scale(1.1);
+        background-color: var(--corfoco);
+        box-shadow: var(--sombranativa);
+        color: #fff;
+    }
+
+    /********** Corpo primeira seção - sobre mim *********/
+
+    .foto-perfil:hover {
+        background-color: var(--corfoco);
+        transform: scale(1.07);
+    }
+
+    /*********** corpo segunda seção - projetos ********/
+
+    .container-projetos ul li:hover {
+        transform: scale(1.1);
+        background-color: var(--corfoco);
+        color: var(--corbloco);
+        box-shadow: var(--sombranativa);
+
+    }
+
+    /*************** footer ************/
+
+    .nome-footer h3:hover {
+        color: var(--corfoco);
+    }
+
+    .contato p:hover {
+        color: var(--corfoco);
+    }
+
+    .contato svg:hover {
+        fill: var(--corfoco);
+    }
+
+}
+
+/************ ativação de efeitos ACTIVE PARA MENORES de  1026px **************/
+
+@media screen and (max-width: 1028px) {
+
+    /************* Botão escuro *********************/
+
+    .button_not:active {
+        fill: var(--colorfundo);
+        background-color: var(--corfoco);
+        border: 2px solid;
+    }
+
+    /************* cabeçalho ************/
+
+    .svg-ico:active {
+
+        transform: scale(1.2);
+        fill: var(--corfoco);
+    }
+
+    /*************** navegação ***********************/
+
+    nav a:active {
+        transform: scale(1.1);
+        background-color: var(--corfoco);
+        box-shadow: var(--sombranativa);
+        color: #fff;
+    }
+
+    /********** Corpo primeira seção - sobre mim *********/
+
+    .foto-perfil:active {
+        background-color: var(--corfoco);
+        transform: scale(1.07);
+    }
+
+    /*********** corpo segunda seção - projetos ********/
+
+    .container-projetos ul li:active {
+        transform: scale(1.1);
+        background-color: var(--corfoco);
+        color: var(--corbloco);
+        box-shadow: var(--sombranativa);
+
+    }
+
+    /*************** footer ************/
+
+    .nome-footer h3:active {
+        color: var(--corfoco);
+    }
+
+    .contato p:active {
+        color: var(--corfoco);
+    }
+
+    .contato svg:active {
+        fill: var(--corfoco);
+    }
+
 }
 
 /*************** acesso em dispositivos menores **************************************************/
 
 @media screen and (max-width: 1404px) {
 
-    .svg-ico:hover {
-        transform: none;
-        fill: #000;
-    }
-
-    .svg-ico:active {
-        fill: var(--corfoco);
-    }
-
-    nav a:hover {
-        transform: none;
-        background-color: var(--corbloco);
-        box-shadow: none;
-        color: var(--corfoco);
-    }
-
-    nav a:active {
-        transform: none;
-        background-color: var(--corfoco);
-        color: #000;
-    }
-
-    .foto-perfil:hover {
-        background-color: var(--corbloco);
-        transform: none;
-    }
-
-    .foto-perfil:active {
-        background-color: var(--corfoco);
-    }
-
-    .container-projetos ul li:hover {
-        transform: none;
-        background-color: var(--corbloco);
-        color: var(--corfoco);
-        box-shadow: none;
-
-    }
-
-    .container-projetos ul li:active {
-        transform: none;
-        background-color: var(--corfoco);
-        color: #fff;
-    }
-
-    .container-projetos ul li {
-        width: 160px;
-        height: 140px;
-    }
-
-
     main {
         max-width: 80%;
     }
+
+    .container-header {
+        padding: 5px 0;
+    }
+
+    /** perfil**/
 
     .container-perfil {
         display: flex;
@@ -453,8 +466,11 @@ nav a:hover {
         line-height: 25px;
     }
 
-    .container-header {
-        padding: 5px 0;
+    /** projetos **/
+
+    .container-projetos ul li {
+        width: 160px;
+        height: 140px;
     }
 
     /***** BOTÃO NOTURNO ****/
@@ -462,15 +478,10 @@ nav a:hover {
     .button_not {
         right: 10vw;
     }
-
-
-
+ 
 }
 
 @media screen and (max-width: 1014px) {
-
-
-
 
     main {
         max-width: 97%;
@@ -548,25 +559,9 @@ nav a:hover {
         bottom: 6vw;
     }
 
-    .button_not:hover {
-        fill: #000000;
-        border: 2px solid #000;
-        background-color: #ffffff;
-    }
-
-    .button_not:active {
-        fill: #ffffff;
-        background-color: #000;
-        border: 2px solid;
-    }
-
-
-
-
 }
 
 @media screen and (max-width: 320px) {
-
 
     /***** BOTÃO NOTURNO ****/
 
@@ -584,9 +579,7 @@ nav a:hover {
 
 @media screen and (max-width: 385px) {
 
-
-    /*************** navegação *******************/
-
+    /********* navegação ***********/
 
     nav a {
         font-size: 13px;
