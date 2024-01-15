@@ -6,6 +6,7 @@
 
  }
 
+ 
  html ::-webkit-scrollbar-thumb {
      border-radius: 10px;
      background: var(--corfoco);
