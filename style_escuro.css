@@ -6,7 +6,6 @@
 
  }
 
- 
  html ::-webkit-scrollbar-thumb {
      border-radius: 10px;
      background: var(--corfoco);
@@ -20,7 +19,6 @@
      scroll-behavior: smooth;
  }
 
-
  :root {
      --colorfundo: #282a3a;
 
@@ -32,8 +30,6 @@
 
      --sombranativa:  #00000059 0px 5px 15px;
  }
-
-
 
  * {
      margin: 0;
@@ -56,8 +52,6 @@
      transition: 0.5s;
 
  }
-
-
 
 /*************** Botão escuro **************************************************/
 
