@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+   <style>
+    section {
+        margin: auto;
+        width: 300px;
+    }
+    input {
+        display: block;
+        margin: 10px;
+    }
+    
+    
+   </style>
+</head>
+<body>
+    <main>
+        <section>
+            <p id="campoincompleto"></p>
+            <input id="nome" type="text" placeholder="nome">
+
+            <input id="sobrenome" type="text" placeholder="Sobrenome">
+
+            <input type="email" name="" id="email" placeholder="email">
+
+            <input placeholder="Numero" type="tel" name="" id="number">
+
+            <input type="password" placeholder="Digite sua senha" id="senha1" > 
+            
+            <input type="date" name="" id="date">
+
+            <input type="password" name="" placeholder="Confirme sua senha digitada" id="senha2">
+            <p style="display: inline;" id="senhaincorrta"></p>
+
+            <button onclick="acessar()">Acessar</button>
+
+
+            <table id="resultado">
+
+
+
+
+            </table>
+        </section>
+    </main>
+
+    <script src="js.js"></script>
+</body>
+</html>
