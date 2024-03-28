@@ -1,4 +1,6 @@
 function noturno() {
+
+    
     var linkstyle = document.getElementById("linkstyle");
 
     var hrefstyle = linkstyle.getAttribute("href");
