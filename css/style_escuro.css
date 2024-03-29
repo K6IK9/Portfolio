@@ -103,7 +103,7 @@
 .container-redes-social ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     justify-content: space-between;
 }
 
@@ -561,31 +561,167 @@ nav a {
 
 }
 
-@media screen and (max-width: 320px) {
-
-    /***** BOTÃO NOTURNO ****/
-
-    .button_not {
-        right: 6vw;
-        bottom: 10vw;
-    }
-
-    .button_not svg {
-        width: 30px;
-        height: 30px;
-    }
-
-}
-
-@media screen and (max-width: 385px) {
-
-    /********* navegação ***********/
-
-    nav a {
-        font-size: 13px;
-        padding: 10px 15px;
-
-
-    }
-
-}
+@media screen and (max-width: 500px) {
+    /* barra de texto */
+   
+    .container-bar h2 {
+       font-size: 22px;
+       
+   }
+   .container-bar {
+       padding: 16px;
+       margin: 17px 0;
+      
+   }
+   
+   /* sobre mim */
+   .foto-perfil {
+   min-width: 250px;
+   width: 10%;
+   }
+   
+    /* Texto sobre mim */
+   .container-text p {
+       font-size: 13px;
+       line-height: 22px;
+       }
+   
+   /* Projetos */
+   .container-projetos ul li {
+   padding: 2px;
+   width: 130px;
+   height: 135px;
+   }
+   
+   /***** BOTÃO NOTURNO ****/
+   
+   .button_not {
+   right: 6vw;
+   bottom: 10vw;
+   }
+   
+   .button_not svg {
+   width: 40px;
+   height: 40px;
+   }
+   
+   
+   
+   
+   
+   }
+   @media screen and (max-width: 385px) {
+   
+       /* Cabeçalho */
+   
+       .container-redes-social ul li {
+           margin: 0 2px;
+       }
+   
+   
+       /********* navegação ***********/
+   
+       nav a {
+           font-size: 13px;
+           padding: 10px 15px;
+       }
+   
+       /* barra de texto */
+   
+       .container-bar h2 {
+           font-size: 19px;
+           
+       }
+       .container-bar {
+           padding: 14px;
+           margin: 15px 0;
+          
+       }
+   
+       /* sobre mim */
+   .foto-perfil {
+       min-width: 209px;
+       width: 10%;
+   }
+   
+   /* Projetos */
+   .container-projetos ul li {
+       padding: 2px;
+       width: 130px;
+       height: 128px;
+   }
+   
+     /***** BOTÃO NOTURNO ****/
+   
+     .button_not {
+       right: 6vw;
+       bottom: 10vw;
+   }
+   
+   .button_not svg {
+       width: 40px;
+       height: 40px;
+   }
+   
+   
+   
+   .container-text p {
+       font-size: 11px;
+       line-height: 22px;
+   }
+   
+   }
+   
+   @media screen and (max-width: 320px) {
+   
+       /* Navegação */
+       nav a {
+           font-size: 10px;
+           padding: 10px 15px;
+       }
+   
+       /* barra de texto */
+   
+       .container-bar h2 {
+           font-size: 17px;
+           
+       }
+       .container-bar {
+           padding: 14px;
+           margin: 15px 0;
+          
+       }
+   
+       /* sobre mim */
+   .foto-perfil {
+       min-width: 209px;
+       width: 10%;
+   }
+   
+   /* Projetos */
+   .container-projetos ul li {
+       padding: 2px;
+       width: 130px;
+       height: 128px;
+   }
+   
+   
+   .container-text p {
+       font-size: 11px;
+       line-height: 22px;
+   }
+   
+       /***** BOTÃO NOTURNO ****/
+   
+       .button_not {
+           right: 6vw;
+           bottom: 10vw;
+       }
+   
+       .button_not svg {
+           width: 30px;
+           height: 30px;
+       }
+   
+   }
+   
