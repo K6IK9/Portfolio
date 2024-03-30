@@ -252,7 +252,7 @@ nav a {
     width: 80px;
     border-radius: 15px;
     transition: 0.5s;
-    
+
     background-color: #fff;
     margin: 10px 0;
 }
@@ -480,7 +480,7 @@ nav a {
     .button_not {
         right: 10vw;
     }
- 
+
 }
 
 @media screen and (max-width: 1014px) {
@@ -565,54 +565,52 @@ nav a {
 
 @media screen and (max-width: 500px) {
 
- /* barra de texto */
+    /* barra de texto */
 
- .container-bar h2 {
-    font-size: 22px;
-    
-}
-.container-bar {
-    padding: 16px;
-    margin: 17px 0;
-   
-}
+    .container-bar h2 {
+        font-size: 22px;
 
-/* sobre mim */
-.foto-perfil {
-min-width: 250px;
-width: 10%;
-}
-
- /* Texto sobre mim */
-.container-text p {
-    font-size: 13px;
-    line-height: 22px;
     }
 
-/* Projetos */
-.container-projetos ul li {
-padding: 2px;
-width: 130px;
-height: 135px;
+    .container-bar {
+        padding: 16px;
+        margin: 17px 0;
+
+    }
+
+    /* sobre mim */
+    .foto-perfil {
+        min-width: 250px;
+        width: 10%;
+    }
+
+    /* Texto sobre mim */
+    .container-text p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    /* Projetos */
+    .container-projetos ul li {
+        padding: 2px;
+        width: 130px;
+        height: 135px;
+    }
+
+    /***** BOTÃO NOTURNO ****/
+
+    .button_not {
+        right: 6vw;
+        bottom: 10vw;
+    }
+
+    .button_not svg {
+        width: 40px;
+        height: 40px;
+    }
+
 }
 
-/***** BOTÃO NOTURNO ****/
-
-.button_not {
-right: 6vw;
-bottom: 10vw;
-}
-
-.button_not svg {
-width: 40px;
-height: 40px;
-}
-
-
-
-
-
-}
 @media screen and (max-width: 385px) {
 
     /* Cabeçalho */
@@ -633,45 +631,46 @@ height: 40px;
 
     .container-bar h2 {
         font-size: 19px;
-        
+
     }
+
     .container-bar {
         padding: 14px;
         margin: 15px 0;
-       
+
     }
 
     /* sobre mim */
-.foto-perfil {
-    min-width: 209px;
-    width: 10%;
-}
+    .foto-perfil {
+        min-width: 209px;
+        width: 10%;
+    }
 
-/* Projetos */
-.container-projetos ul li {
-    padding: 2px;
-    width: 130px;
-    height: 128px;
-}
+    /* Projetos */
+    .container-projetos ul li {
+        padding: 2px;
+        width: 130px;
+        height: 128px;
+    }
 
-  /***** BOTÃO NOTURNO ****/
+    /***** BOTÃO NOTURNO ****/
 
-  .button_not {
-    right: 6vw;
-    bottom: 10vw;
-}
+    .button_not {
+        right: 6vw;
+        bottom: 10vw;
+    }
 
-.button_not svg {
-    width: 40px;
-    height: 40px;
-}
+    .button_not svg {
+        width: 40px;
+        height: 40px;
+    }
 
 
 
-.container-text p {
-    font-size: 11px;
-    line-height: 22px;
-}
+    .container-text p {
+        font-size: 11px;
+        line-height: 22px;
+    }
 
 }
 
@@ -687,32 +686,33 @@ height: 40px;
 
     .container-bar h2 {
         font-size: 17px;
-        
+
     }
+
     .container-bar {
         padding: 14px;
         margin: 15px 0;
-       
+
     }
 
     /* sobre mim */
-.foto-perfil {
-    min-width: 209px;
-    width: 10%;
-}
+    .foto-perfil {
+        min-width: 209px;
+        width: 10%;
+    }
 
-/* Projetos */
-.container-projetos ul li {
-    padding: 2px;
-    width: 130px;
-    height: 128px;
-}
+    /* Projetos */
+    .container-projetos ul li {
+        padding: 2px;
+        width: 130px;
+        height: 128px;
+    }
 
 
-.container-text p {
-    font-size: 11px;
-    line-height: 22px;
-}
+    .container-text p {
+        font-size: 11px;
+        line-height: 22px;
+    }
 
     /***** BOTÃO NOTURNO ****/
 
@@ -727,4 +727,3 @@ height: 40px;
     }
 
 }
-
