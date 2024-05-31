@@ -1,18 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surpresa para Você</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Convite de Namoro - Vibrante!</title>
+    <style>
+        body {
+          background-color: #800080;
+          font-family: 'Arial', sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          margin: 0;
+        }
+    
+        .container {
+          background-color: #ffffff;
+          border-radius: 20px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          padding: 30px;
+          max-width: 500px;
+        }
+    
+        .titulo h1 {
+          font-size: 3em;
+          color: #800080;
+          margin-bottom: 20px;
+        }
+    
+        .estrelas {
+          position: absolute;
+          top: 100px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          z-index: -1;
+        }
+    
+        .estrela {
+          width: 50px;
+          height: 50px;
+          background-color: white;
+          border-radius: 50%;
+          box-shadow: 0 0 10px white;
+          animation: twinkling 2s infinite;
+        }
+    
+        .estrela:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+    
+        .estrela:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+    
+        .estrela:nth-child(4) {
+          animation-delay: 0.6s;
+        }
+    
+        .estrela:nth-child(5) {
+          animation-delay: 0.8s;
+        }
+    
+        .mensagem p {
+          font-size: 1.2em;
+          color: #800080;
+          margin-bottom: 20px;
+          line-height: 1.5;
+        }
+    
+        .botoes button {
+          background-color: #800080;
+          color: white;
+          padding: 15px 30px;
+          border: none;
+          border-radius: 5px;
+          font-size: 1.2em;
+          margin: 10px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+    
+        .botoes button:hover {
+          background-color: #4B0082;
+        }
+    
+        .botoes .sim {
+          background-color: #FFC0CB; /* Rosa vibrante */
+        }
+    
+        .botoes .sim:hover {
+          background-color: #FF69B4; /* Rosa mais intenso */
+        }
+    
+        @keyframes twinkling {
+          0% {
+            transform: scale(1);
+            box-shadow: 0 0 10px white;
+          }
+    
+          50% {
+            transform: scale(1.2);
+            box-shadow: 0 0 15px white;
+          }
+    
+          100% {
+            transform: scale(1);
+            box-shadow: 0 0 10px white;
+          }
+        }
+      </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>Surpresa para Você!</h1>
-        <p id="mensagem">Clique no botão abaixo!</p>
-        <button id="botaoSurpresa" onclick="mostrarSurpresa()">Clique Aqui</button>
+        <div class="estrelas">
+            <div class="estrela"></div>
+            <div class="estrela"></div>
+            <div class="estrela"></div>
+            <div class="estrela"></div>
+            <div class="estrela"></div>
+        </div>
+
+        <div class="titulo">
+            <h1>Uma palavrinha para pessoa que faz raiva a eu</h1>
+        </div>
+
+        <div class="mensagem">
+            <p>Estou entendendo que tu está totalmente enfiada na cabeça, kkkkkkkk n sei pq, mais você não sai vei, vem
+                momentos que penso se nos estamos ali juntos e por ai vai então qro tu pa eu rapa,
+                gostosakkkkkkk///////////// minha pergunta é se tu quer cancelar esse tal de tempo que eu dei e quer
+                <s>vim dar pra mim 🫣😈</s>, pera quer vim encontrar comigo depois da tua escolinha, e se caso sim, me diz se
+                vai trabalhar amanha?</p>
+        </div>
+
+        <div class="botoes">
+            <button class="sim" onclick="piscarTela()">Sim,
+                quero meu gostoso!</button>
+            <button class="nao" onclick="alert('Que pena! 😢 Mas te entendo... 🥰')">Ainda não sei vai ficar com esse
+                seu tempo...</button>
+        </div>
+
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function piscarTela() {
+            alert('Awwww! 😍 Você fez meu dia! muiee se prepa....ef.\rs.fa.rg. 💖')
+            let intervalo = setInterval(() => {
+                document.body.style.backgroundColor = document.body.style.backgroundColor === "#800080" ? "#ffffff" : "#800080";
+            }, 200);
+        }
+    </script>
 </body>
+
 </html>
