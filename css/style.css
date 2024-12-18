@@ -178,12 +178,15 @@ nav a {
     border-radius: 30px;
     background-color: var(--corbloco);
     box-shadow: var(--sombranativa);
+    overflow: hidden; /* Ensure the image does not escape */
     transition: 0.5s;
 }
 
 .foto-perfil img {
     width: 100%;
+    height: auto; /* Maintain aspect ratio */
 }
+
 
 .container-text {
     width: 53%;
