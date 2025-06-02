@@ -1,155 +1,245 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite de Namoro - Vibrante!</title>
-    <style>
-        body {
-          background-color: #800080;
-          font-family: 'Arial', sans-serif;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
-          margin: 0;
-        }
-    
-        .container {
-          background-color: #ffffff;
-          border-radius: 20px;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-          text-align: center;
-          padding: 30px;
-          max-width: 500px;
-        }
-    
-        .titulo h1 {
-          font-size: 3em;
-          color: #800080;
-          margin-bottom: 20px;
-        }
-    
-        .estrelas {
-          position: absolute;
-          top: 100px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100%;
-          display: flex;
-          justify-content: space-around;
-          z-index: -1;
-        }
-    
-        .estrela {
-          width: 50px;
-          height: 50px;
-          background-color: white;
-          border-radius: 50%;
-          box-shadow: 0 0 10px white;
-          animation: twinkling 2s infinite;
-        }
-    
-        .estrela:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-    
-        .estrela:nth-child(3) {
-          animation-delay: 0.4s;
-        }
-    
-        .estrela:nth-child(4) {
-          animation-delay: 0.6s;
-        }
-    
-        .estrela:nth-child(5) {
-          animation-delay: 0.8s;
-        }
-    
-        .mensagem p {
-          font-size: 1.2em;
-          color: #800080;
-          margin-bottom: 20px;
-          line-height: 1.5;
-        }
-    
-        .botoes button {
-          background-color: #800080;
-          color: white;
-          padding: 15px 30px;
-          border: none;
-          border-radius: 5px;
-          font-size: 1.2em;
-          margin: 10px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-        }
-    
-        .botoes button:hover {
-          background-color: #4B0082;
-        }
-    
-        .botoes .sim {
-          background-color: #FFC0CB; /* Rosa vibrante */
-        }
-    
-        .botoes .sim:hover {
-          background-color: #FF69B4; /* Rosa mais intenso */
-        }
-    
-        @keyframes twinkling {
-          0% {
-            transform: scale(1);
-            box-shadow: 0 0 10px white;
-          }
-    
-          50% {
-            transform: scale(1.2);
-            box-shadow: 0 0 15px white;
-          }
-    
-          100% {
-            transform: scale(1);
-            box-shadow: 0 0 10px white;
-          }
-        }
-      </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brincadeira do Botão Fujão</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      max-width: 90%;
+      width: 400px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .instructions {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .game-area {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      margin-bottom: 30px;
+    }
+
+    #runawayBtn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 30px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #runawayBtn.running {
+      transition: all 0.4s ease;
+    }
+
+    #giveUpBtn {
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #2ecc71, #27ae60);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+
+    #giveUpBtn.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .attempt-counter {
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Responsividade para celular */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .instructions {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
+
+      .game-area {
+        height: 250px;
+      }
+
+      #runawayBtn {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+      }
+
+      #giveUpBtn {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+
+      .container {
+        width: 95%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .instructions {
+        font-size: 0.9rem;
+      }
+
+      .game-area {
+        height: 200px;
+      }
+
+      #runawayBtn {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="estrelas">
-            <div class="estrela"></div>
-            <div class="estrela"></div>
-            <div class="estrela"></div>
-            <div class="estrela"></div>
-            <div class="estrela"></div>
-        </div>
-
-        <div class="titulo">
-            <h1>Uma palavrinha </h1>
-        </div>
-
-        <div class="mensagem">
-            <p>dasesfesefsf</p>
-        </div>
-
-        <div class="botoes">
-            <button class="sim" onclick="piscarTela()">Sim, receba</button>
-            <button class="nao" onclick="alert('Qddede 😢 deedd... 🥰')">Adeededeff</button>
-        </div>
-
+  <div class="container">
+    <h1>🎯 Tente Me Pegar! 🎯</h1>
+    <div class="instructions">
+      Tente clicar no botão abaixo!
     </div>
 
-    <script>
-        function piscarTela() {
-            alert('Af..fa.rg. 💖')
-            let intervalo = setInterval(() => {
-                document.body.style.backgroundColor = document.body.style.backgroundColor === "#800080" ? "#ffffff" : "#800080";
-            }, 200);
-        }
-    </script>
+    <div class="attempt-counter">
+      Tentativas: <span id="attempts">0</span>
+    </div>
+
+    <div class="game-area">
+      <button id="runawayBtn">👆 Clique Aqui! 👆</button>
+    </div>
+
+    <button id="giveUpBtn">😩 Cansei! Me leva pro YouTube 📺</button>
+  </div>
+
+  <script>
+    const runawayBtn = document.getElementById('runawayBtn');
+    const giveUpBtn = document.getElementById('giveUpBtn');
+    const attemptsSpan = document.getElementById('attempts');
+    const gameArea = document.querySelector('.game-area');
+
+    let attempts = 0;
+    let isRunning = false;
+
+    function getRandomPosition() {
+      const gameRect = gameArea.getBoundingClientRect();
+      const maxX = gameRect.width - 150; // tamanho aproximado do botão
+      const maxY = gameRect.height - 60;
+
+      const newX = Math.random() * maxX;
+      const newY = Math.random() * maxY;
+
+      return { x: newX, y: newY };
+    }
+
+    function moveButton() {
+      if (isRunning) return;
+
+      isRunning = true;
+      attempts++;
+      attemptsSpan.textContent = attempts;
+
+      // Adicionar classe de animação
+      runawayBtn.classList.add('running');
+
+      // Mover para nova posição
+      const newPos = getRandomPosition();
+      runawayBtn.style.left = newPos.x + 'px';
+      runawayBtn.style.top = newPos.y + 'px';
+
+      // Mostrar botão "Cansei" após 3 tentativas
+      if (attempts >= 5) {
+        giveUpBtn.classList.add('show');
+      }
+
+      // Permitir nova movimentação
+      setTimeout(() => {
+        runawayBtn.classList.remove('running');
+        isRunning = false;
+      }, 400);
+    }
+
+    // Eventos para fazer o botão fugir
+    runawayBtn.addEventListener('mouseenter', moveButton);
+    runawayBtn.addEventListener('mouseover', moveButton);
+    runawayBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      moveButton();
+    });
+    runawayBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      moveButton();
+    });
+
+    giveUpBtn.addEventListener('click', () => {
+      window.open('https://www.youtube.com/', '_blank');
+    });
+
+    // Inicializar posição do botão
+    window.addEventListener('load', () => {
+      const initialPos = getRandomPosition();
+      runawayBtn.style.left = initialPos.x + 'px';
+      runawayBtn.style.top = initialPos.y + 'px';
+    });
+  </script>
 </body>
 
 </html>
