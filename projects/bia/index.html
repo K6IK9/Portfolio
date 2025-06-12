@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clica aeeeeee no the button</title>
+  <title>Clica aeeeeee no the button - MODO CAOS</title>
   <style>
     * {
       margin: 0;
@@ -67,12 +67,6 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       opacity: 0;
       transform: scale(0.5);
-      z-index: 10; /* Garante que os botões fiquem clicáveis */
-    }
-
-    .dynamic-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
     .dynamic-btn.running {
@@ -86,16 +80,40 @@
     }
 
     /* NOVO: Cores diferentes para níveis */
-    .dynamic-btn.level-1 { background: linear-gradient(45deg, #ff6b6b, #ee5a24); }
-    .dynamic-btn.level-2 { background: linear-gradient(45deg, #f39c12, #e67e22); }
-    .dynamic-btn.level-3 { background: linear-gradient(45deg, #9b59b6, #8e44ad); }
-    .dynamic-btn.level-4 { background: linear-gradient(45deg, #e74c3c, #c0392b); }
-    .dynamic-btn.level-5 { background: linear-gradient(45deg, #2c3e50, #34495e); }
+    .dynamic-btn.level-1 {
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    }
+
+    .dynamic-btn.level-2 {
+      background: linear-gradient(45deg, #f39c12, #e67e22);
+    }
+
+    .dynamic-btn.level-3 {
+      background: linear-gradient(45deg, #9b59b6, #8e44ad);
+    }
+
+    .dynamic-btn.level-4 {
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+    }
+
+    .dynamic-btn.level-5 {
+      background: linear-gradient(45deg, #2c3e50, #34495e);
+    }
 
     @keyframes bounceIn {
-      0% { transform: scale(0.3); opacity: 0; }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); opacity: 1; }
+      0% {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     #giveUpBtn {
@@ -140,23 +158,6 @@
       background: rgba(255, 255, 255, 0.1);
       border-radius: 15px;
       margin-bottom: 5px;
-    }
-
-    /* NOVO: Modo sucesso */
-    .success-message {
-      display: none;
-      color: #2ecc71;
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      margin-bottom: 20px;
-      animation: successPulse 1s ease;
-    }
-
-    @keyframes successPulse {
-      0% { transform: scale(0.5); opacity: 0; }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); opacity: 1; }
     }
 
     /* Responsividade para celular */
@@ -219,16 +220,13 @@
       Só clica, não é virus kkkkk
     </div>
 
-    <div class="success-message" id="successMessage">
-      🎉 CONSEGUIU! Mas agora ficou mais difícil... 🎉
-    </div>
-
     <div class="attempt-counter">
       Tentativas: <span id="attempts">0</span>
     </div>
 
     <!-- Estatísticas do jogo dinâmico -->
     <div class="game-stats" id="gameStats">
+      <div class="stat-item">Nível: <span id="currentLevel">1</span></div>
       <div class="stat-item">Botões: <span id="buttonCount">1</span></div>
       <div class="stat-item">Velocidade: <span id="speedLevel">Normal</span></div>
     </div>
@@ -249,11 +247,10 @@
     const currentLevelSpan = document.getElementById('currentLevel');
     const buttonCountSpan = document.getElementById('buttonCount');
     const speedLevelSpan = document.getElementById('speedLevel');
-    const successMessage = document.getElementById('successMessage');
 
     let attempts = 0;
     let isRunning = false;
-    
+
     const messages = [
       "Sucesso ne", "REcebaaa ", "DEvagarrr",
       "Bia, desiste!", "IAinda aquii", "😂", "Dia dos namorados kakak", "aiaiai"
@@ -280,7 +277,7 @@
     function updateDynamicStats() {
       currentLevelSpan.textContent = currentLevel;
       buttonCountSpan.textContent = buttonCount;
-      
+
       if (dynamicSpeed > 400) speedLevelSpan.textContent = 'de boas';
       else if (dynamicSpeed > 300) speedLevelSpan.textContent = 'vai dar não em';
       else if (dynamicSpeed > 200) speedLevelSpan.textContent = 'pegaaaaaaaaa';
@@ -293,52 +290,51 @@
       createDynamicButton();
     }
 
-    // Mostrar mensagem de sucesso
-    function showSuccessMessage() {
-      successMessage.style.display = 'block';
-      setTimeout(() => {
-        successMessage.style.display = 'none';
-      }, 2000);
-    }
-
     // Criar botão dinâmico
     function createDynamicButton() {
       const btn = document.createElement('button');
       btn.className = `dynamic-btn level-${Math.min(currentLevel, 5)}`;
       btn.textContent = `Botão ${buttonCount}`;
-      
+
       const pos = getRandomPosition(dynamicGame);
       btn.style.left = pos.x + 'px';
       btn.style.top = pos.y + 'px';
-      
-      // CORRIGIDO: Eventos mais precisos
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        moveDynamicButton(btn);
-      });
 
-      // Para dispositivos móveis
-      btn.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        moveDynamicButton(btn);
-      });
+      // Detecta se é dispositivo touch
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-      // Movimento apenas no hover (opcional)
-      btn.addEventListener('mouseenter', () => {
-        if (!isRunning && Math.random() < 0.3) { // 30% de chance de mover no hover
+      if (isTouchDevice) {
+        // Para dispositivos touch: apenas click/tap move o botão
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
           moveDynamicButton(btn);
-        }
-      });
-      
+        });
+
+        // Previne comportamentos indesejados no touch
+        btn.addEventListener('touchstart', (e) => {
+          e.stopPropagation();
+        });
+
+        btn.addEventListener('touchmove', (e) => {
+          e.preventDefault();
+        });
+      } else {
+        // Para desktop: hover move o botão
+        btn.addEventListener('mouseenter', () => moveDynamicButton(btn));
+        btn.addEventListener('mouseover', () => moveDynamicButton(btn));
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          moveDynamicButton(btn);
+        });
+      }
+
       dynamicGame.appendChild(btn);
-      
+
       // Animação de entrada
       setTimeout(() => {
         btn.classList.add('show');
       }, 100);
-      
+
       dynamicButtons.push(btn);
     }
 
@@ -356,28 +352,21 @@
       button.style.left = newPos.x + 'px';
       button.style.top = newPos.y + 'px';
 
-      // Verifica se foi um clique real (não hover)
-      const wasClicked = event && (event.type === 'click' || event.type === 'touchstart');
-      
-      if (wasClicked) {
-        showSuccessMessage();
-      }
-
       // Lógica de progressão
       if (attempts % 3 === 0) { // A cada 3 tentativas
         currentLevel++;
         buttonCount++;
         dynamicSpeed = Math.max(50, dynamicSpeed - 40);
-        
+
         // Cria novo botão
         createDynamicButton();
-        
+
         // Muda mensagens dos botões existentes
         dynamicButtons.forEach((btn, index) => {
           const randomMessage = messages[Math.floor(Math.random() * messages.length)];
           btn.textContent = randomMessage;
         });
-        
+
         updateDynamicStats();
       }
 
