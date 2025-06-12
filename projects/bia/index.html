@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brincadeira do Botão Fujão</title>
+  <title>Clica aeeeeee no the button</title>
   <style>
     * {
       margin: 0;
@@ -44,20 +44,19 @@
       margin-bottom: 40px;
     }
 
-    .game-area {
+    /* NOVO: Jogo dinâmico */
+    .dynamic-game {
       position: relative;
       width: 100%;
-      height: 300px;
+      height: 350px;
       margin-bottom: 30px;
+      overflow: hidden;
     }
 
-    #runawayBtn {
+    .dynamic-btn {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 15px 30px;
-      font-size: 1.3rem;
+      padding: 10px 20px;
+      font-size: 1rem;
       font-weight: bold;
       background: linear-gradient(45deg, #ff6b6b, #ee5a24);
       color: white;
@@ -66,10 +65,31 @@
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: scale(0.5);
     }
 
-    #runawayBtn.running {
-      transition: all 0.4s ease;
+    .dynamic-btn.running {
+      transition: all 0.2s ease;
+    }
+
+    .dynamic-btn.show {
+      opacity: 1;
+      transform: scale(1);
+      animation: bounceIn 0.5s ease;
+    }
+
+    /* NOVO: Cores diferentes para níveis */
+    .dynamic-btn.level-1 { background: linear-gradient(45deg, #ff6b6b, #ee5a24); }
+    .dynamic-btn.level-2 { background: linear-gradient(45deg, #f39c12, #e67e22); }
+    .dynamic-btn.level-3 { background: linear-gradient(45deg, #9b59b6, #8e44ad); }
+    .dynamic-btn.level-4 { background: linear-gradient(45deg, #e74c3c, #c0392b); }
+    .dynamic-btn.level-5 { background: linear-gradient(45deg, #2c3e50, #34495e); }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     #giveUpBtn {
@@ -100,6 +120,22 @@
       margin-bottom: 20px;
     }
 
+    /* NOVO: Estatísticas do jogo dinâmico */
+    .game-stats {
+      color: white;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .stat-item {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 5px 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      margin-bottom: 5px;
+    }
+
     /* Responsividade para celular */
     @media (max-width: 768px) {
       h1 {
@@ -112,13 +148,8 @@
         margin-bottom: 30px;
       }
 
-      .game-area {
+      .dynamic-game {
         height: 250px;
-      }
-
-      #runawayBtn {
-        padding: 12px 25px;
-        font-size: 1.1rem;
       }
 
       #giveUpBtn {
@@ -128,6 +159,11 @@
 
       .container {
         width: 95%;
+      }
+
+      .stat-item {
+        margin: 2px 5px;
+        font-size: 0.8rem;
       }
     }
 
@@ -140,13 +176,13 @@
         font-size: 0.9rem;
       }
 
-      .game-area {
+      .dynamic-game {
         height: 200px;
       }
 
-      #runawayBtn {
-        padding: 10px 20px;
-        font-size: 1rem;
+      .dynamic-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -154,34 +190,56 @@
 
 <body>
   <div class="container">
-    <h1>Tente clica Bia kkkkk</h1>
-    <div class="instructions">
-      Tente clicar no botão abaixo!
+    <h1>🔥 Clica Bia 🔥</h1>
+
+    <div class="instructions" id="instructions">
+      Só clica, não é virus kkkkk
     </div>
 
     <div class="attempt-counter">
       Tentativas: <span id="attempts">0</span>
     </div>
 
-    <div class="game-area">
-      <button id="runawayBtn"> Me aperte </button>
+    <!-- Estatísticas do jogo dinâmico -->
+    <div class="game-stats" id="gameStats">
+      <div class="stat-item">Botões: <span id="buttonCount">1</span></div>
+      <div class="stat-item">Velocidade: <span id="speedLevel">Normal</span></div>
+    </div>
+
+    <!-- Jogo dinâmico -->
+    <div class="dynamic-game" id="dynamicGame">
+      <!-- Botões serão criados dinamicamente aqui -->
     </div>
 
     <button id="giveUpBtn">Aff, Desisto!</button>
   </div>
 
   <script>
-    const runawayBtn = document.getElementById('runawayBtn');
     const giveUpBtn = document.getElementById('giveUpBtn');
     const attemptsSpan = document.getElementById('attempts');
-    const gameArea = document.querySelector('.game-area');
+    const dynamicGame = document.getElementById('dynamicGame');
+    const gameStats = document.getElementById('gameStats');
+    const currentLevelSpan = document.getElementById('currentLevel');
+    const buttonCountSpan = document.getElementById('buttonCount');
+    const speedLevelSpan = document.getElementById('speedLevel');
 
     let attempts = 0;
     let isRunning = false;
+    
+    const messages = [
+      "Sucesso ne", "REcebaaa ", "DEvagarrr",
+      "Bia, desiste!", "IAinda aquii", "😂", "Dia dos namorados kakak", "aiaiai"
+    ];
 
-    function getRandomPosition() {
-      const gameRect = gameArea.getBoundingClientRect();
-      const maxX = gameRect.width - 150; // tamanho aproximado do botão
+    // Variáveis para jogo dinâmico
+    let dynamicButtons = [];
+    let currentLevel = 1;
+    let buttonCount = 1;
+    let dynamicSpeed = 500;
+
+    function getRandomPosition(container = dynamicGame) {
+      const gameRect = container.getBoundingClientRect();
+      const maxX = gameRect.width - 150;
       const maxY = gameRect.height - 60;
 
       const newX = Math.random() * maxX;
@@ -190,54 +248,116 @@
       return { x: newX, y: newY };
     }
 
-    function moveButton() {
+    // Função para atualizar estatísticas do jogo dinâmico
+    function updateDynamicStats() {
+      currentLevelSpan.textContent = currentLevel;
+      buttonCountSpan.textContent = buttonCount;
+      
+      if (dynamicSpeed > 400) speedLevelSpan.textContent = 'de boas';
+      else if (dynamicSpeed > 300) speedLevelSpan.textContent = 'vai dar não em';
+      else if (dynamicSpeed > 200) speedLevelSpan.textContent = 'pegaaaaaaaaa';
+      else if (dynamicSpeed > 100) speedLevelSpan.textContent = 'Agora é sucesso';
+      else speedLevelSpan.textContent = 'kakakakka dessiteeeeeeeeee';
+    }
+
+    // Inicializar jogo dinâmico
+    function initDynamicGame() {
+      createDynamicButton();
+    }
+
+    // Criar botão dinâmico
+    function createDynamicButton() {
+      const btn = document.createElement('button');
+      btn.className = `dynamic-btn level-${Math.min(currentLevel, 5)}`;
+      btn.textContent = `Botão ${buttonCount}`;
+      
+      const pos = getRandomPosition(dynamicGame);
+      btn.style.left = pos.x + 'px';
+      btn.style.top = pos.y + 'px';
+      
+      // Adiciona eventos
+      btn.addEventListener('mouseenter', () => moveDynamicButton(btn));
+      btn.addEventListener('mouseover', () => moveDynamicButton(btn));
+      btn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        moveDynamicButton(btn);
+      });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        moveDynamicButton(btn);
+      });
+      
+      dynamicGame.appendChild(btn);
+      
+      // Animação de entrada
+      setTimeout(() => {
+        btn.classList.add('show');
+      }, 100);
+      
+      dynamicButtons.push(btn);
+    }
+
+    // Mover botão dinâmico
+    function moveDynamicButton(button) {
       if (isRunning) return;
 
       isRunning = true;
       attempts++;
       attemptsSpan.textContent = attempts;
 
-      // Adicionar classe de animação
-      runawayBtn.classList.add('running');
+      button.classList.add('running');
 
-      // Mover para nova posição
-      const newPos = getRandomPosition();
-      runawayBtn.style.left = newPos.x + 'px';
-      runawayBtn.style.top = newPos.y + 'px';
+      const newPos = getRandomPosition(dynamicGame);
+      button.style.left = newPos.x + 'px';
+      button.style.top = newPos.y + 'px';
 
-      // Mostrar botão "Cansei" após 3 tentativas
+      // Lógica de progressão
+      if (attempts % 3 === 0) { // A cada 3 tentativas
+        currentLevel++;
+        buttonCount++;
+        dynamicSpeed = Math.max(50, dynamicSpeed - 40);
+        
+        // Cria novo botão
+        createDynamicButton();
+        
+        // Muda mensagens dos botões existentes
+        dynamicButtons.forEach((btn, index) => {
+          const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+          btn.textContent = randomMessage;
+        });
+        
+        updateDynamicStats();
+      }
+
+      // Move todos os outros botões também (CAOS!)
+      if (currentLevel > 2) {
+        dynamicButtons.forEach(btn => {
+          if (btn !== button) {
+            const pos = getRandomPosition(dynamicGame);
+            btn.style.left = pos.x + 'px';
+            btn.style.top = pos.y + 'px';
+          }
+        });
+      }
+
       if (attempts >= 5) {
         giveUpBtn.classList.add('show');
       }
 
-      // Permitir nova movimentação
       setTimeout(() => {
-        runawayBtn.classList.remove('running');
+        button.classList.remove('running');
         isRunning = false;
-      }, 400);
+      }, dynamicSpeed);
     }
-
-    // Eventos para fazer o botão fugir
-    runawayBtn.addEventListener('mouseenter', moveButton);
-    runawayBtn.addEventListener('mouseover', moveButton);
-    runawayBtn.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      moveButton();
-    });
-    runawayBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      moveButton();
-    });
 
     giveUpBtn.addEventListener('click', () => {
       window.open('https://youtu.be/Tv0KCA1G8A8?si=N_ey8xQl73uNG_1u', '_blank');
     });
 
-    // Inicializar posição do botão
+    // Inicializar o jogo quando a página carregar
     window.addEventListener('load', () => {
-      const initialPos = getRandomPosition();
-      runawayBtn.style.left = initialPos.x + 'px';
-      runawayBtn.style.top = initialPos.y + 'px';
+      initDynamicGame();
+      updateDynamicStats();
     });
   </script>
 </body>
