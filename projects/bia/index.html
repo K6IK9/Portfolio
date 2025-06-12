@@ -67,6 +67,12 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       opacity: 0;
       transform: scale(0.5);
+      z-index: 10; /* Garante que os botões fiquem clicáveis */
+    }
+
+    .dynamic-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
     .dynamic-btn.running {
@@ -136,6 +142,23 @@
       margin-bottom: 5px;
     }
 
+    /* NOVO: Modo sucesso */
+    .success-message {
+      display: none;
+      color: #2ecc71;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      animation: successPulse 1s ease;
+    }
+
+    @keyframes successPulse {
+      0% { transform: scale(0.5); opacity: 0; }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
     /* Responsividade para celular */
     @media (max-width: 768px) {
       h1 {
@@ -196,6 +219,10 @@
       Só clica, não é virus kkkkk
     </div>
 
+    <div class="success-message" id="successMessage">
+      🎉 CONSEGUIU! Mas agora ficou mais difícil... 🎉
+    </div>
+
     <div class="attempt-counter">
       Tentativas: <span id="attempts">0</span>
     </div>
@@ -222,6 +249,7 @@
     const currentLevelSpan = document.getElementById('currentLevel');
     const buttonCountSpan = document.getElementById('buttonCount');
     const speedLevelSpan = document.getElementById('speedLevel');
+    const successMessage = document.getElementById('successMessage');
 
     let attempts = 0;
     let isRunning = false;
@@ -265,6 +293,14 @@
       createDynamicButton();
     }
 
+    // Mostrar mensagem de sucesso
+    function showSuccessMessage() {
+      successMessage.style.display = 'block';
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 2000);
+    }
+
     // Criar botão dinâmico
     function createDynamicButton() {
       const btn = document.createElement('button');
@@ -275,16 +311,25 @@
       btn.style.left = pos.x + 'px';
       btn.style.top = pos.y + 'px';
       
-      // Adiciona eventos
-      btn.addEventListener('mouseenter', () => moveDynamicButton(btn));
-      btn.addEventListener('mouseover', () => moveDynamicButton(btn));
-      btn.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        moveDynamicButton(btn);
-      });
+      // CORRIGIDO: Eventos mais precisos
       btn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         moveDynamicButton(btn);
+      });
+
+      // Para dispositivos móveis
+      btn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        moveDynamicButton(btn);
+      });
+
+      // Movimento apenas no hover (opcional)
+      btn.addEventListener('mouseenter', () => {
+        if (!isRunning && Math.random() < 0.3) { // 30% de chance de mover no hover
+          moveDynamicButton(btn);
+        }
       });
       
       dynamicGame.appendChild(btn);
@@ -310,6 +355,13 @@
       const newPos = getRandomPosition(dynamicGame);
       button.style.left = newPos.x + 'px';
       button.style.top = newPos.y + 'px';
+
+      // Verifica se foi um clique real (não hover)
+      const wasClicked = event && (event.type === 'click' || event.type === 'touchstart');
+      
+      if (wasClicked) {
+        showSuccessMessage();
+      }
 
       // Lógica de progressão
       if (attempts % 3 === 0) { // A cada 3 tentativas
